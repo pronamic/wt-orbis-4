@@ -1,0 +1,18 @@
+// Bootstrap
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+// Sass variables
+@import "partials/variables";
+
+// Import mixins
+@import "partials/mixins";
+
+// Global styling
+@import "partials/base";
+
+// Navigation
+@import "partials/navigation";
+
+// Dashboard styling
+@import "partials/template-dashboard";
