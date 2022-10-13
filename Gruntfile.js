@@ -111,6 +111,15 @@ module.exports = function( grunt ) {
 						src: [ '**' ],
 						dest: 'assets/popper'
 					},
+					{ // Flot - http://www.flotcharts.org/
+						expand: true,
+						cwd: 'node_modules/jquery.flot',
+						src: [
+							'jquery.flot.js',
+							'jquery.flot.time.js'
+						],
+						dest: 'assets/flot'
+					}
 				]
 			},
 
@@ -234,7 +243,9 @@ module.exports = function( grunt ) {
 		uglify: {
 			combine: {
 				files: {
-					'assets/orbis/js/script.min.js': [ 'assets/orbis/js/script.js' ]
+					'assets/orbis/js/script.min.js': [ 'assets/orbis/js/script.js' ],
+					'assets/flot/jquery.flot.min.js': [ 'assets/flot/jquery.flot.js' ],
+					'assets/flot/jquery.flot.time.min.js': [ 'assets/flot/jquery.flot.time.js' ]
 				}
 			}
 		},
