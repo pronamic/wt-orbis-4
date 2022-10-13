@@ -277,8 +277,8 @@ module.exports = function( grunt ) {
 		'phplint',
 		'concat',
 		'sass',
-		'cssmin',
 		'copy',
+		'cssmin',
 		'uglify',
 		'imagemin'
 	] );
