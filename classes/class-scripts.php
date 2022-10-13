@@ -69,7 +69,7 @@ class Orbis_Theme_Scripts {
 			'fontawesome',
 			$uri . '/assets/fontawesome/css/all' . $min . '.css',
 			array(),
-			'5.12.0'
+			'5.15.4'
 		);
 
 		// Flotcharts
