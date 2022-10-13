@@ -41,7 +41,7 @@ class Orbis_Theme_Scripts {
 			'popper',
 			$uri . '/assets/popper/popper' . $min . '.js',
 			array(),
-			'1.15.0',
+			'1.16.1',
 			true
 		);
 
