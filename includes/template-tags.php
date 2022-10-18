@@ -79,7 +79,7 @@ function orbis_content_nav() {
 	}
 
 	echo '<div class="mt-3">';
-	echo $html; // WPCS: XSS ok.
+	echo $html;
 	echo '</div>';
 }
 
@@ -103,24 +103,24 @@ function orbis_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 
 	switch ( $comment->comment_type ) :
-		case 'pingback':
-		case 'trackback':
+		case 'pingback'  :
+		case 'trackback' :
 			?>
 			<li class="post pingback">
 				<p><?php esc_html_e( 'Pingback:', 'orbis' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'orbis' ), ' ' ); ?></p>
 			<?php
 			break;
 
-		default:
+		default :
 			?>
 			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 				<div id="comment-<?php comment_ID(); ?>" class="comment-content">
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 60 ); ?>
-
+		
 					<?php
 
-					printf( // WPCS: XSS ok.
+					printf(
 						__( '%s <span class="says">says:</span>', 'orbis' ),
 						sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() )
 					);
@@ -128,7 +128,7 @@ function orbis_comment( $comment, $args, $depth ) {
 					?>
 				</div>
 
-				<?php if ( '0' === $comment->comment_approved ) : ?>
+				<?php if ( $comment->comment_approved == '0' ) : ?>
 
 					<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'orbis' ); ?></em><br />
 
@@ -151,36 +151,31 @@ function orbis_comment( $comment, $args, $depth ) {
 				</div>
 
 				<div class="comment-body">
-					<?php echo wp_kses_post( get_comment_text() ); ?>
+					<?php comment_text(); ?>
 				</div>
 
 				<div class="reply">
-					<?php
-					comment_reply_link( array_merge( $args, array(
-						'depth'     => $depth,
-						'max_depth' => $args['max_depth'],
-					) ) );
-					?>
+					<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 				</div>
 			</div>
 
 			<?php
 
 			break;
-	endswitch; // phpcs:ignore Squiz.PHP.NonExecutableCode.Unreachable
+	endswitch;
 }
 
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function orbis_posted_on() {
-	printf( // WPCS: XSS ok.
+	printf(
 		__( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'orbis' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		esc_url( get_author_posts_url(get_the_author_meta('ID') ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'orbis' ), get_the_author() ) ),
 		get_the_author()
 	);
