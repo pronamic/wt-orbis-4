@@ -249,6 +249,8 @@ while ( have_posts() ) :
 					</dl>
 				</div>
 			</div>
+
+			<?php do_action( 'orbis_after_side_content' ); ?>
 		</div>
 	</div>
 
