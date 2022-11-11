@@ -54,8 +54,15 @@ get_header();
 							</td>
 							<td>
 								<?php
-								$price = new Money( $orbis_project->get_price(), 'EUR' );
-								echo esc_html( $price->format_i18n() );
+
+								$price = $orbis_project->get_price();
+
+								if ( ! empty( $price ) ) {
+									$money = new Money( $price, 'EUR' );
+								
+									echo esc_html( $money->format_i18n() );
+								}
+
 								?>
 							</td>
 							<td class="project-time">
