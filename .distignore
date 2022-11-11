@@ -1,0 +1,23 @@
+# Build
+/build/
+
+# Deploy
+/deploy/
+
+# Source
+/src/
+
+# Composer
+/vendor/
+
+# Node
+/node_modules/
+
+/.distignore
+/.gitignore
+/.git
+
+/package-lock.json
+/package.json
+
+/phpcs.ruleset.xml
