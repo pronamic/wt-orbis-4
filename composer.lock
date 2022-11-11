@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "015da0dc9200e3a7a4e6d2ab6f2095ec",
+    "content-hash": "6abd20ed61b2946f7d583589a093b3fd",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -62,48 +62,37 @@
         },
         {
             "name": "pronamic/wp-money",
-            "version": "dev-develop",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pronamic/wp-money.git",
-                "reference": "0979695a9a08830530be5421884084323541619c"
+                "reference": "ad362217da75e14eeb8939a6fe637f2c3195b5e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pronamic/wp-money/zipball/0979695a9a08830530be5421884084323541619c",
-                "reference": "0979695a9a08830530be5421884084323541619c",
+                "url": "https://api.github.com/repos/pronamic/wp-money/zipball/ad362217da75e14eeb8939a6fe637f2c3195b5e5",
+                "reference": "ad362217da75e14eeb8939a6fe637f2c3195b5e5",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3"
+                "php": ">=5.6.20",
+                "pronamic/wp-number": "^1.1"
             },
             "require-dev": {
-                "johnpbloch/wordpress": "^4.9",
+                "bamarni/composer-bin-plugin": "^1.4",
                 "koodimonni-language/de_de": "*",
                 "koodimonni-language/fr_fr": "*",
                 "koodimonni-language/nl_nl": "*",
-                "php-coveralls/php-coveralls": "^1.1",
+                "php-coveralls/php-coveralls": "^2.4",
                 "phpmd/phpmd": "^2.4",
-                "phpunit/phpunit": "^4.8",
+                "phpunit/phpunit": "^5.7 || ^6.0",
+                "pronamic/wp-coding-standards": "^1.0",
+                "roots/wordpress": "^5.8",
                 "vlucas/phpdotenv": "^2.0",
-                "wimg/php-compatibility": "^8.1",
-                "wp-coding-standards/wpcs": "^0.14.1",
-                "wp-phpunit/wp-phpunit": "^4.9"
+                "wp-phpunit/wp-phpunit": "^5.8",
+                "yoast/phpunit-polyfills": "^1.0"
             },
             "type": "library",
-            "extra": {
-                "dropin-paths": {
-                    "vendor/wp-phpunit/wp-phpunit/data/languages/": [
-                        "vendor:koodimonni-language"
-                    ],
-                    "vendor/wp-phpunit/wp-phpunit/data/languages/plugins/": [
-                        "vendor:koodimonni-plugin-language"
-                    ],
-                    "vendor/wp-phpunit/wp-phpunit/data/languages/themes/": [
-                        "vendor:koodimonni-theme-language"
-                    ]
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Pronamic\\WordPress\\Money\\": "src"
@@ -113,7 +102,83 @@
             "license": [
                 "GPL-3.0-or-later"
             ],
-            "time": "2018-04-20T13:33:43+00:00"
+            "description": "WordPress Money library.",
+            "support": {
+                "issues": "https://github.com/pronamic/wp-money/issues",
+                "source": "https://github.com/pronamic/wp-money/tree/2.0.3"
+            },
+            "time": "2022-09-27T09:26:03+00:00"
+        },
+        {
+            "name": "pronamic/wp-number",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-number.git",
+                "reference": "c26538f223ae4326e8758679ed7372020d15b1d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-number/zipball/c26538f223ae4326e8758679ed7372020d15b1d1",
+                "reference": "c26538f223ae4326e8758679ed7372020d15b1d1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.20"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "koodimonni-language/de_de": "*",
+                "koodimonni-language/fr_fr": "*",
+                "koodimonni-language/nl_nl": "*",
+                "overtrue/phplint": "^3.0",
+                "php-coveralls/php-coveralls": "^2.4",
+                "phpmd/phpmd": "^2.9",
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0",
+                "pronamic/wp-coding-standards": "^1.0",
+                "roots/wordpress": "^5.8",
+                "wp-phpunit/wp-phpunit": "^5.8",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Number\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "https://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "https://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "WordPress Number library.",
+            "keywords": [
+                "Double",
+                "calculator",
+                "float",
+                "i18n",
+                "int",
+                "number",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/pronamic/wp-number/issues",
+                "source": "https://github.com/pronamic/wp-number/tree/1.1.1"
+            },
+            "time": "2022-09-23T14:18:57+00:00"
         }
     ],
     "packages-dev": [
@@ -547,22 +612,14 @@
             "time": "2018-02-16T01:57:48+00:00"
         }
     ],
-    "aliases": [
-        {
-            "alias": "1.0.0",
-            "alias_normalized": "1.0.0.0",
-            "version": "dev-develop",
-            "package": "pronamic/wp-money"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "pronamic/wp-money": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.2.0"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }
