@@ -1,6 +1,6 @@
 <?php
 /**
- * CasinoWizard RTP deploy
+ * Orbis 4 deploy
  * 
  * @package casinowizard-rtp
  */
