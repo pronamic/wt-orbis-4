@@ -35,8 +35,15 @@ if ( $query->have_posts() ) : ?>
 						</td>
 						<td>
 							<?php
-							$price = new Money( $orbis_project->get_price(), 'EUR' );
-							echo esc_html( $price->format_i18n() );
+
+							$value = $orbis_project->get_price();
+
+							if ( $value ) {
+								$price = new Money( $value, 'EUR' );
+							
+								echo esc_html( $price->format_i18n() );
+							}
+
 							?>
 						</td>
 						<td class="project-time">
