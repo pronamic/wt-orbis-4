@@ -6,25 +6,31 @@ while ( have_posts() ) :
 ?>
 
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<div class="card-deck mb-4">
-			<div class="card">
-				<div class="card-header"><?php esc_html_e( 'Details', 'orbis' ); ?></div>
+		<div class="row row-cols-1 row-cols-md-3 mb-3">
+			<div class="col">
+				<div class="card">
+					<div class="card-header"><?php esc_html_e( 'Details', 'orbis' ); ?></div>
 
-				<div class="card-body">
-					<?php get_template_part( 'template-parts/company-general-details' ); ?>
+					<div class="card-body">
+						<?php get_template_part( 'template-parts/company-general-details' ); ?>
+					</div>
 				</div>
 			</div>
 
-			<div class="card">
-				<div class="card-header"><?php esc_html_e( 'Contacts', 'orbis' ); ?></div>
+			<div class="col">
+				<div class="card">
+					<div class="card-header"><?php esc_html_e( 'Contacts', 'orbis' ); ?></div>
 
-				<?php get_template_part( 'template-parts/company-contacts' ); ?>
+					<?php get_template_part( 'template-parts/company-contacts' ); ?>
+				</div>
 			</div>
 
-			<div class="card">
-				<div class="card-header"><?php esc_html_e( 'Users', 'orbis' ); ?></div>
+			<div class="col">
+				<div class="card">
+					<div class="card-header"><?php esc_html_e( 'Users', 'orbis' ); ?></div>
 
-				<?php get_template_part( 'template-parts/company-users' ); ?>
+					<?php get_template_part( 'template-parts/company-users' ); ?>
+				</div>
 			</div>
 		</div>
 

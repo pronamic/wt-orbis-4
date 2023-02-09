@@ -18,20 +18,22 @@ if ( $connected->have_posts() ) : ?>
 			<?php $connected->the_post(); ?>
 
 			<li class="list-group-item">
-				<div class="media">
-					<a href="<?php the_permalink(); ?>" class="mr-3">
-						<?php if ( has_post_thumbnail() ) : ?>
+				<div class="d-flex">
+					<div class="flex-shrink-0">
+						<a href="<?php the_permalink(); ?>" class="mr-3">
+							<?php if ( has_post_thumbnail() ) : ?>
 
-							<?php the_post_thumbnail( 'avatar' ); ?>
+								<?php the_post_thumbnail( 'avatar' ); ?>
 
-						<?php else : ?>
+							<?php else : ?>
 
-							<img src="<?php bloginfo( 'template_directory' ); ?>/placeholders/avatar.png" alt="">
+								<img src="<?php bloginfo( 'template_directory' ); ?>/placeholders/avatar.png" alt="">
 
-						<?php endif; ?>
-					</a>
+							<?php endif; ?>
+						</a>
+					</div>
 
-					<div class="media-body">
+					<div class="flex-grow-1 ms-3">
 						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
 
 						<?php

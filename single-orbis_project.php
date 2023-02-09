@@ -124,31 +124,31 @@ while ( have_posts() ) :
 						<dd>
 							<?php if ( $orbis_project->is_finished() ) : ?>
 
-								<span class="badge badge-success"><?php esc_html_e( 'Finished', 'orbis' ); ?></span>
+								<span class="badge text-bg-success"><?php esc_html_e( 'Finished', 'orbis' ); ?></span>
 
 							<?php else : ?>
 
-								<span class="badge badge-secondary"><?php esc_html_e( 'Not finished', 'orbis' ); ?></span>
+								<span class="badge text-bg-secondary"><?php esc_html_e( 'Not finished', 'orbis' ); ?></span>
 
 							<?php endif; ?>
 
 							<?php if ( $orbis_project->is_invoiced() ) : ?>
 
-								<span class="badge badge-success"><?php esc_html_e( 'Invoiced', 'orbis' ); ?></span>
+								<span class="badge text-bg-success"><?php esc_html_e( 'Invoiced', 'orbis' ); ?></span>
 
 							<?php else : ?>
 
-								<span class="badge badge-secondary"><?php esc_html_e( 'Not invoiced', 'orbis' ); ?></span>
+								<span class="badge text-bg-secondary"><?php esc_html_e( 'Not invoiced', 'orbis' ); ?></span>
 
 							<?php endif; ?>
 
 							<?php if ( $orbis_project->is_invoicable() ) : ?>
 
-								<span class="badge badge-success"><?php esc_html_e( 'Invoicable', 'orbis' ); ?></span>
+								<span class="badge text-bg-success"><?php esc_html_e( 'Invoicable', 'orbis' ); ?></span>
 
 							<?php else : ?>
 
-								<span class="badge badge-secondary"><?php esc_html_e( 'Not invoicable', 'orbis' ); ?></span>
+								<span class="badge text-bg-secondary"><?php esc_html_e( 'Not invoicable', 'orbis' ); ?></span>
 
 							<?php endif; ?>
 							<?php
@@ -158,7 +158,7 @@ while ( have_posts() ) :
 							foreach ( $project_statuses as $project_status ) {
 								$status_type = get_term_meta( $project_status->term_id, 'orbis_status_type', true ) ? get_term_meta( $project_status->term_id, 'orbis_status_type', true ) : 'primary';
 								printf(
-									'<span class="badge badge-%s orbis-status">%s</span>',
+									'<span class="badge text-badge-%s orbis-status">%s</span>',
 									esc_attr( $status_type ),
 									esc_attr( $project_status->name )
 								);

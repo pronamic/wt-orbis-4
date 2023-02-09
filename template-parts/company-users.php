@@ -27,12 +27,12 @@ if ( empty( $users ) ) : ?>
 		<?php foreach ( $users as $user ) : ?>
 
 			<li class="list-group-item">
-				<div class="media">
-					<span class="mr-3">
+				<div class="d-flex">
+					<div class="flex-shrink-0">
 						<img src="<?php bloginfo( 'template_directory' ); ?>/placeholders/avatar.png" alt="">
-					</span>
+					</div>
 
-					<div class="media-body">
+					<div class="flex-grow-1 ms-3">
 						<?php
 
 						echo \esc_html( $user->display_name ), '<br />';
