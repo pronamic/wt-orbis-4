@@ -6,7 +6,6 @@
 require_once get_template_directory() . '/includes/widgets/orbis-widget-posts.php';
 require_once get_template_directory() . '/includes/widgets/orbis-widget-news.php';
 require_once get_template_directory() . '/includes/widgets/orbis-widget-comments.php';
-require_once get_template_directory() . '/includes/widgets/orbis-widget-twitter.php';
 require_once get_template_directory() . '/includes/widgets/orbis-widget-stats.php';
 
 /**
