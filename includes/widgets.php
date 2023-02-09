@@ -34,7 +34,6 @@ function orbis_widgets_init() {
 	register_widget( 'Orbis_List_Posts_Widget' );
 	register_widget( 'Orbis_News_Widget' );
 	register_widget( 'Orbis_Comments_Widget' );
-	register_widget( 'Orbis_Twitter_Widget' );
 	register_widget( 'Orbis_Stats_Widget' );
 
 	/* Register Widget Areas */
