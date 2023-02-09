@@ -3,6 +3,7 @@ module.exports = function( grunt ) {
 
 	var phpFiles = [
 		'**/*.php',
+		'!build/**',
 		'!node_modules/**',
 		'!bower_components/**',
 		'!deploy/**',

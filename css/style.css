@@ -1166,8 +1166,8 @@ blockquote {
     display: none;
   }
   .primary-nav h3,
-.primary-nav .nav-label,
-.site-title {
+  .primary-nav .nav-label,
+  .site-title {
     display: none;
   }
   .primary-nav a i.fa {
@@ -1188,7 +1188,7 @@ blockquote {
     display: block;
   }
   .primary-nav li.current-menu-parent .sub-menu,
-.primary-nav li.menu-item-has-children > a:after {
+  .primary-nav li.menu-item-has-children > a:after {
     display: none;
   }
 }

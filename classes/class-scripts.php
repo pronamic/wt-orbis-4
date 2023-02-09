@@ -53,7 +53,7 @@ class Orbis_Theme_Scripts {
 				'jquery',
 				'popper',
 			),
-			'4.4.1',
+			'5.2.3',
 			true
 		);
 
@@ -61,7 +61,7 @@ class Orbis_Theme_Scripts {
 			'bootstrap',
 			$uri . '/assets/bootstrap/css/bootstrap' . $min . '.css',
 			array(),
-			'4.4.1'
+			'5.2.3'
 		);
 
 		// Font Awesome - http://fortawesome.github.io/Font-Awesome/
