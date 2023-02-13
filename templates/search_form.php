@@ -44,14 +44,20 @@ switch ( get_query_var( 'post_type' ) ) {
 	<form method="get" action="<?php echo esc_attr( $action_url ); ?>">
 		<div class="d-flex justify-content-between">
 
-			<div class="form-inline">
-				<span>
+			<div class="row row-cols-lg-auto g-3 align-items-center">
+				<div class="col-12">
 					<label for="orbis_search_query" class="sr-only"><?php esc_html_e( 'Search', 'orbis' ); ?></label>
 
-					<input id="orbis_search_query" type="search" class="form-control" name="s" placeholder="<?php esc_attr_e( 'Search', 'orbis' ); ?>" value="<?php echo esc_attr( $s ); ?>"> <button type="submit" class="btn btn-secondary"><?php esc_html_e( 'Search', 'orbis' ); ?></button> 
+					<input id="orbis_search_query" type="search" class="form-control" name="s" placeholder="<?php esc_attr_e( 'Search', 'orbis' ); ?>" value="<?php echo esc_attr( $s ); ?>">
+				</div>
 
-					<?php if ( is_post_type_archive( 'orbis_person' ) ) : ?>
+				<div class="col-12">
+					<button type="submit" class="btn btn-secondary"><?php esc_html_e( 'Search', 'orbis' ); ?></button>
+				</div>
 
+				<?php if ( is_post_type_archive( 'orbis_person' ) ) : ?>
+
+					<div class="col-12">
 						<?php
 
 						$slugs = filter_input( INPUT_GET, 'c', FILTER_SANITIZE_STRING );
@@ -90,15 +96,17 @@ switch ( get_query_var( 'post_type' ) ) {
 						</style>
 
 						<button type="submit" class="btn btn-secondary"><?php esc_html_e( 'Filter', 'orbis' ); ?></button>
+					</div>
 
-					<?php endif; ?>
+				<?php endif; ?>
 
-					<?php if ( $has_advanced ) : ?>
+				<?php if ( $has_advanced ) : ?>
 
+					<div class="col-12">
 						<small><a href="#" class="advanced-search-link" data-toggle="collapse" data-target="#advanced-search"><?php esc_html_e( 'Advanced Search', 'orbis' ); ?></a></small>
+					</div>
 
-					<?php endif; ?>
-				</span>
+				<?php endif; ?>
 			</div>
 
 			<div class="form-inline">
