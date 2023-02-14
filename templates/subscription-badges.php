@@ -35,11 +35,11 @@ if ( $is_expired ) {
 foreach ( $badges as $badge ) {
 	$classes = array(
 		'badge',
-		'badge-' . $badge['variation']
+		'text-bg-' . $badge['variation']
 	);
 
 	printf(
-		'<span class="badge badge-%s">%s</span> ',
+		'<span class="%s">%s</span> ',
 		esc_attr( implode( ' ', $classes ) ),
 		esc_html( $badge['content'] )
 	);
