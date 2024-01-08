@@ -41,11 +41,13 @@
 	},
 	"require-dev": {
 		"phpmd/phpmd": "^2.4",
-		"deployer/deployer": "^7.0"
+		"deployer/deployer": "^7.0",
+		"pronamic/wp-coding-standards": "^2.1"
 	},
 	"config": {
 		"allow-plugins": {
-			"automattic/jetpack-autoloader": true
+			"automattic/jetpack-autoloader": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
 	}
 }
