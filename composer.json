@@ -42,7 +42,8 @@
 	"require-dev": {
 		"phpmd/phpmd": "^2.4",
 		"deployer/deployer": "^7.0",
-		"pronamic/wp-coding-standards": "^2.1"
+		"pronamic/wp-coding-standards": "^2.1",
+		"pronamic/pronamic-cli": "^1.1"
 	},
 	"config": {
 		"allow-plugins": {
