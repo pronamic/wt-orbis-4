@@ -3,7 +3,7 @@
 /**
  * Autoload
  */
-require get_template_directory() . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload_packages.php';
 
 /**
  * Includes
