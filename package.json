@@ -25,7 +25,16 @@
 	],
 	"license": "GPL-3.0",
 	"homepage": "https://github.com/wp-orbis/wt-orbis-3",
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "^5.12.0",
+		"bootstrap": "^5.2.3",
+		"jquery.flot": "^0.8.3",
+		"popper.js": "^1.16.0",
+		"tether": "^1.4.7"
+	},
 	"devDependencies": {
+		"@wordpress/env": "^9.0.0",
+		"@wordpress/scripts": "^26.19.0",
 		"grunt": "^1.5.3",
 		"grunt-aws-s3": "^2.0.1",
 		"grunt-checktextdomain": "^1.0.1",
@@ -42,13 +51,17 @@
 		"grunt-phpcs": "^0.4.0",
 		"grunt-phplint": "0.1.0",
 		"grunt-wp-i18n": "~1.0.3",
-		"load-grunt-tasks": "^5.1.0"
+		"load-grunt-tasks": "^5.1.0",
+		"npm-run-all": "^4.1.5"
 	},
-	"dependencies": {
-		"@fortawesome/fontawesome-free": "^5.12.0",
-		"bootstrap": "^5.2.3",
-		"jquery.flot": "^0.8.3",
-		"popper.js": "^1.16.0",
-		"tether": "^1.4.7"
+	"scripts": {
+		"copy": "npm-run-all --aggregate-output --parallel copy-*",
+		"copy-bootstrap": "cp -r node_modules/bootstrap/dist/ assets/bootstrap/",
+		"copy-fontawesome-css": "cp -r node_modules/@fortawesome/fontawesome-free/css/ assets/fortawesome/css/",
+		"copy-fontawesome-webfonts": "cp -r node_modules/@fortawesome/fontawesome-free/webfonts/ assets/fortawesome/webfonts/",
+		"copy-bootstrap": "cp -r node_modules/tether/dist/ assets/tether/",
+		"copy-bootstrap": "cp -r node_modules/popper.js/dist/umd/ assets/popper/",
+		"copy-angular": "cp node_modules/jquery.flot/jquery.flot.js node_modules/jquery.flot/jquery.flot.time.js assets/flot/",
+		"lint-pkg-json": "wp-scripts lint-pkg-json"
 	}
 }
