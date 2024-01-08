@@ -35,7 +35,7 @@
 		]
 	},
 	"require": {
-		"pronamic/wp-money": "^2.0",
+		"pronamic/wp-money": "^2.4",
 		"php": ">=5.2.0",
 		"automattic/jetpack-autoloader": "^3.0"
 	},
