@@ -1,16 +1,7 @@
 {
-	"name": "orbis-3",
-	"version": "3.0.0",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/wp-orbis/wt-orbis-3.git"
-	},
-	"keywords": [
-		"pronamic",
-		"orbis",
-		"crm",
-		"intranet"
-	],
+	"name": "@pronamic/wt-orbis-4",
+	"version": "4.0.0",
+	"description": "The default WordPress theme for Orbis.",
 	"author": {
 		"name": "Pronamic",
 		"email": "info@pronamic.nl",
@@ -23,8 +14,22 @@
 			"url": "http://www.remcotolsma.nl/"
 		}
 	],
-	"license": "GPL-3.0",
-	"homepage": "https://github.com/wp-orbis/wt-orbis-3",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"pronamic",
+		"orbis",
+		"crm",
+		"intranet"
+	],
+	"homepage": "https://github.com/wp-orbis/wt-orbis-4",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wp-orbis/wt-orbis-4.git"
+	},
+	"bugs": {
+		"url": "https://github.com/pronamic/wt-orbis-4/issues",
+		"email": "support@pronamic.eu"
+	},
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^5.12.0",
 		"bootstrap": "^5.2.3",
