@@ -1,54 +1,54 @@
 {
-  "name": "orbis-3",
-  "version": "3.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wp-orbis/wt-orbis-3.git"
-  },
-  "keywords": [
-    "pronamic",
-    "orbis",
-    "crm",
-    "intranet"
-  ],
-  "author": {
-    "name": "Pronamic",
-    "email": "info@pronamic.nl",
-    "url": "http://www.pronamic.eu/"
-  },
-  "contributors": [
-    {
-      "name": "Remco Tolsma",
-      "email": "info@remcotolsma.nl",
-      "url": "http://www.remcotolsma.nl/"
-    }
-  ],
-  "license": "GPL-3.0",
-  "homepage": "https://github.com/wp-orbis/wt-orbis-3",
-  "devDependencies": {
-    "grunt": "^1.5.3",
-    "grunt-aws-s3": "^2.0.1",
-    "grunt-checktextdomain": "^1.0.1",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-compass": "^1.1.1",
-    "grunt-contrib-compress": "^1.6.0",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^3.0.0",
-    "grunt-contrib-imagemin": "^3.1.0",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^4.0.1",
-    "grunt-git": "^1.0.14",
-    "grunt-phpcs": "^0.4.0",
-    "grunt-phplint": "0.1.0",
-    "grunt-wp-i18n": "~1.0.3",
-    "load-grunt-tasks": "^5.1.0"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.12.0",
-    "bootstrap": "^5.2.3",
-    "jquery.flot": "^0.8.3",
-    "popper.js": "^1.16.0",
-    "tether": "^1.4.7"
-  }
+	"name": "orbis-3",
+	"version": "3.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wp-orbis/wt-orbis-3.git"
+	},
+	"keywords": [
+		"pronamic",
+		"orbis",
+		"crm",
+		"intranet"
+	],
+	"author": {
+		"name": "Pronamic",
+		"email": "info@pronamic.nl",
+		"url": "http://www.pronamic.eu/"
+	},
+	"contributors": [
+		{
+			"name": "Remco Tolsma",
+			"email": "info@remcotolsma.nl",
+			"url": "http://www.remcotolsma.nl/"
+		}
+	],
+	"license": "GPL-3.0",
+	"homepage": "https://github.com/wp-orbis/wt-orbis-3",
+	"devDependencies": {
+		"grunt": "^1.5.3",
+		"grunt-aws-s3": "^2.0.1",
+		"grunt-checktextdomain": "^1.0.1",
+		"grunt-contrib-clean": "^2.0.0",
+		"grunt-contrib-compass": "^1.1.1",
+		"grunt-contrib-compress": "^1.6.0",
+		"grunt-contrib-concat": "^1.0.1",
+		"grunt-contrib-copy": "^1.0.0",
+		"grunt-contrib-cssmin": "^3.0.0",
+		"grunt-contrib-imagemin": "^3.1.0",
+		"grunt-contrib-sass": "^1.0.0",
+		"grunt-contrib-uglify": "^4.0.1",
+		"grunt-git": "^1.0.14",
+		"grunt-phpcs": "^0.4.0",
+		"grunt-phplint": "0.1.0",
+		"grunt-wp-i18n": "~1.0.3",
+		"load-grunt-tasks": "^5.1.0"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "^5.12.0",
+		"bootstrap": "^5.2.3",
+		"jquery.flot": "^0.8.3",
+		"popper.js": "^1.16.0",
+		"tether": "^1.4.7"
+	}
 }
