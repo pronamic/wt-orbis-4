@@ -9,9 +9,9 @@ class Orbis_Theme_Admin {
 	 */
 	public function __construct() {
 		// Filters
-		add_filter( 'mce_buttons_2', array( $this, 'mce_buttons_2' ) );
+		add_filter( 'mce_buttons_2', [ $this, 'mce_buttons_2' ] );
 
-		add_filter( 'tiny_mce_before_init', array( $this, 'tiny_mce_before_init' ) );
+		add_filter( 'tiny_mce_before_init', [ $this, 'tiny_mce_before_init' ] );
 	}
 
 	/**
@@ -37,100 +37,100 @@ class Orbis_Theme_Admin {
 	 * Get TinyMCE style format
 	 */
 	private function get_tiny_mce_style_formats() {
-		return array(
+		return [
 			// @see http://v4-alpha.getbootstrap.com/components/buttons/
-			array(
-				'title' => __( 'Buttons', 'orbis' ),
-				'items' => array(
-					array(
-						'title'    => __( 'Default', 'orbis' ),
+			[
+				'title' => __( 'Buttons', 'orbis-4' ),
+				'items' => [
+					[
+						'title'    => __( 'Default', 'orbis-4' ),
 						'selector' => 'a',
 						'classes'  => 'btn',
-					),
-					array(
-						'title'    => __( 'Primary', 'orbis' ),
+					],
+					[
+						'title'    => __( 'Primary', 'orbis-4' ),
 						'selector' => '.btn',
 						'classes'  => 'btn-primary',
-					),
-					array(
-						'title'    => __( 'Success', 'orbis' ),
+					],
+					[
+						'title'    => __( 'Success', 'orbis-4' ),
 						'selector' => '.btn',
 						'classes'  => 'btn-success',
-					),
-					array(
-						'title'    => __( 'Info', 'orbis' ),
+					],
+					[
+						'title'    => __( 'Info', 'orbis-4' ),
 						'selector' => '.btn',
 						'classes'  => 'btn-info',
-					),
-					array(
-						'title'    => __( 'Warning', 'orbis' ),
+					],
+					[
+						'title'    => __( 'Warning', 'orbis-4' ),
 						'selector' => '.btn',
 						'classes'  => 'btn-warning',
-					),
-					array(
-						'title'    => __( 'Danger', 'orbis' ),
+					],
+					[
+						'title'    => __( 'Danger', 'orbis-4' ),
 						'selector' => '.btn',
 						'classes'  => 'btn-danger',
-					),
-					array(
-						'title'    => __( 'Link', 'orbis' ),
+					],
+					[
+						'title'    => __( 'Link', 'orbis-4' ),
 						'selector' => '.btn',
 						'classes'  => 'btn-link',
-					),
-				),
-			),
+					],
+				],
+			],
 			// @see http://v4-alpha.getbootstrap.com/content/tables/
-			array(
-				'title' => __( 'Tables', 'orbis' ),
-				'items' => array(
-					array(
-						'title'    => __( 'Default', 'orbis' ),
+			[
+				'title' => __( 'Tables', 'orbis-4' ),
+				'items' => [
+					[
+						'title'    => __( 'Default', 'orbis-4' ),
 						'selector' => 'table',
 						'classes'  => 'table',
-					),
-					array(
-						'title'    => __( 'Inverse', 'orbis' ),
+					],
+					[
+						'title'    => __( 'Inverse', 'orbis-4' ),
 						'selector' => '.table',
 						'classes'  => 'table-inverse',
-					),
-					array(
-						'title'    => __( 'Striped Rows', 'orbis' ),
+					],
+					[
+						'title'    => __( 'Striped Rows', 'orbis-4' ),
 						'selector' => '.table',
 						'classes'  => 'table-striped',
-					),
-					array(
-						'title'    => __( 'Bordered Table', 'orbis' ),
+					],
+					[
+						'title'    => __( 'Bordered Table', 'orbis-4' ),
 						'selector' => '.table',
 						'classes'  => 'table-bordered',
-					),
-					array(
-						'title'    => __( 'Hover Rows', 'orbis' ),
+					],
+					[
+						'title'    => __( 'Hover Rows', 'orbis-4' ),
 						'selector' => '.table',
 						'classes'  => 'table-hover',
-					),
-					array(
-						'title'    => __( 'Small Table', 'orbis' ),
+					],
+					[
+						'title'    => __( 'Small Table', 'orbis-4' ),
 						'selector' => '.table',
 						'classes'  => 'table-sm',
-					),
-				),
-			),
+					],
+				],
+			],
 			// @see http://v4-alpha.getbootstrap.com/content/typography/#blockquotes
-			array(
-				'title' => __( 'Blockquotes', 'orbis' ),
-				'items' => array(
-					array(
-						'title'    => __( 'Default', 'orbis' ),
+			[
+				'title' => __( 'Blockquotes', 'orbis-4' ),
+				'items' => [
+					[
+						'title'    => __( 'Default', 'orbis-4' ),
 						'selector' => 'blockquote',
 						'classes'  => 'blockquote',
-					),
-					array(
-						'title'    => __( 'Reverse Layout', 'orbis' ),
+					],
+					[
+						'title'    => __( 'Reverse Layout', 'orbis-4' ),
 						'selector' => '.blockquote',
 						'classes'  => 'blockquote-reverse',
-					),
-				),
-			),
-		);
+					],
+				],
+			],
+		];
 	}
 }

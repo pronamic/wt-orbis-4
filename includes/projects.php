@@ -1,11 +1,11 @@
 <?php
 
 function orbis_company_sections_projects( $sections ) {
-	$sections[] = array(
+	$sections[] = [
 		'id'            => 'projects',
-		'name'          => __( 'Projects', 'orbis' ),
+		'name'          => __( 'Projects', 'orbis-4' ),
 		'template_part' => 'templates/company_projects',
-	);
+	];
 
 	return $sections;
 }

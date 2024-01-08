@@ -1,8 +1,8 @@
 <?php
 
-$project_sections = apply_filters( 'orbis_project_sections', array() );
+$project_sections = apply_filters( 'orbis_project_sections', [] );
 
-$tab = get_query_var( 'tabs', __( 'timesheet', 'orbis' ) );
+$tab = get_query_var( 'tabs', __( 'timesheet', 'orbis-4' ) );
 
 if ( ! empty( $project_sections ) ) : ?>
 

@@ -5,7 +5,7 @@
 	$twitter_widget_id = get_option( 'orbis_twitter_widget_id' );
 	$twitter_username  = get_post_meta( $post->ID, '_orbis_twitter', true );
 	$twitter_url       = sprintf( 'https://twitter.com/%s', $twitter_username );
-	$twitter_text      = sprintf( __( 'Tweets from @%s', 'orbis' ), $twitter_username );
+	$twitter_text      = sprintf( __( 'Tweets from @%s', 'orbis-4' ), $twitter_username );
 
 	?>
 
@@ -14,7 +14,7 @@
 			<?php
 
 			printf(
-				esc_html__( '%1$s on Twitter', 'orbis' ),
+				esc_html__( '%1$s on Twitter', 'orbis-4' ),
 				esc_html( get_the_title() )
 			);
 

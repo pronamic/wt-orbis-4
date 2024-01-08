@@ -14,10 +14,10 @@
 				<thead>
 					<tr>
 						<th></th>
-						<th><?php esc_html_e( 'Name', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Company', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Address', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Author', 'orbis' ); ?></th>
+						<th><?php esc_html_e( 'Name', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Company', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Address', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Author', 'orbis-4' ); ?></th>
 						<th></th>
 					</tr>
 				</thead>
@@ -27,7 +27,7 @@
 					while ( have_posts() ) :
 						the_post();
 						$contact = new Orbis_Contact();
-					?>
+						?>
 
 						<tr>
 							<td>
@@ -66,10 +66,12 @@
 							<td>
 								<?php
 
-								$data = array_filter( array(
-									$contact->get_title(),
-									$contact->get_organization(),
-								) );
+								$data = array_filter(
+									[
+										$contact->get_title(),
+										$contact->get_organization(),
+									] 
+								);
 
 								echo esc_html( implode( ', ', $data ) );
 

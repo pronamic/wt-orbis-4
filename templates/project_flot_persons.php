@@ -1,7 +1,8 @@
 <div class="card-body">
 	<?php
 
-	$query = $wpdb->prepare( "
+	$query = $wpdb->prepare(
+		"
 		SELECT
 			SUM( timesheet.number_seconds ) AS total_seconds,
 			user.display_name,
@@ -19,11 +20,13 @@
 		GROUP BY
 			user.id
 		;
-	", get_the_ID() );
+	",
+		get_the_ID() 
+	);
 
 	$result = $wpdb->get_results( $query );
 
-	$flot_data = array();
+	$flot_data = [];
 
 	foreach ( $result as $row ) {
 		$label = sprintf(
@@ -32,22 +35,22 @@
 			$row->display_name
 		);
 
-		$flot_data[] = array(
+		$flot_data[] = [
 			'label' => $label,
-			'data'  => array(
-				array( 0, $row->total_seconds ),
-			),
-		);
+			'data'  => [
+				[ 0, $row->total_seconds ],
+			],
+		];
 	}
 
-	$flot_options = array(
-		'series' => array(
-			'pie' => array(
+	$flot_options = [
+		'series' => [
+			'pie' => [
 				'innerRadius' => 0.5,
 				'show'        => true,
-			),
-		),
-	);
+			],
+		],
+	];
 
 	?>
 	<div id="donut2" class="graph" style="height: 400px; width: 100%;"></div>

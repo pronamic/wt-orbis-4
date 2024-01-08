@@ -11,10 +11,10 @@
 			<table class="table table-striped table-condense table-hover">
 				<thead>
 					<tr>
-						<th><?php esc_html_e( 'Title', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'IP address', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Hostname', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Hostname Provider', 'orbis' ); ?></th>
+						<th><?php esc_html_e( 'Title', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'IP address', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Hostname', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Hostname Provider', 'orbis-4' ); ?></th>
 						<th></th>
 					</tr>
 				</thead>
@@ -22,7 +22,7 @@
 					<?php
 					while ( have_posts() ) :
 						the_post();
-					?>
+						?>
 
 						<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<td>

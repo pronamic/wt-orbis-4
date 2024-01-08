@@ -11,10 +11,10 @@
 			<table class="table table-striped table-condense table-hover">
 				<thead>
 					<tr>
-						<th><?php esc_html_e( 'Name', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Address', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Online', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Author', 'orbis' ); ?></th>
+						<th><?php esc_html_e( 'Name', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Address', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Online', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Author', 'orbis-4' ); ?></th>
 						<th></th>
 					</tr>
 				</thead>
@@ -22,7 +22,7 @@
 					<?php
 					while ( have_posts() ) :
 						the_post();
-					?>
+						?>
 
 						<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<td>
@@ -31,7 +31,7 @@
 								$favicon_url = orbis_get_favicon_url( get_post_meta( get_the_ID(), '_orbis_website', true ) );
 
 								if ( ! empty( $favicon_url ) ) :
-								?>
+									?>
 
 									<img src="<?php echo esc_attr( $favicon_url ); ?>" alt="" />
 

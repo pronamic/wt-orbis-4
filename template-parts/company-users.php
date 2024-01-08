@@ -7,17 +7,17 @@ if ( ! \function_exists( 'p2p_register_connection_type' ) ) {
 $post = \get_post();
 
 $users = get_users(
-	array(
+	[
 		'connected_type'  => 'orbis_users_to_companies',
-		'connected_items' => $post
-	)
+		'connected_items' => $post,
+	]
 );
 
 if ( empty( $users ) ) : ?>
 
 	<div class="card-body">
 		<p class="text-muted m-0">
-			<?php esc_html_e( 'No users connected.', 'orbis' ); ?>
+			<?php esc_html_e( 'No users connected.', 'orbis-4' ); ?>
 		</p>
 	</div>
 

@@ -1,17 +1,19 @@
 <div class="card mt-3">
-	<div class="card-header"><?php esc_html_e( 'Involved Persons', 'orbis' ); ?></div>
+	<div class="card-header"><?php esc_html_e( 'Involved Persons', 'orbis-4' ); ?></div>
 
 	<?php
 
-	$query = new WP_Query( array(
-		'connected_type'  => 'orbis_projects_to_persons',
-		'connected_items' => get_queried_object(),
-		'nopaging'        => true, // phpcs:ignore WordPress.VIP.PostsPerPage.posts_per_page_nopaging
-	) );
+	$query = new WP_Query(
+		[
+			'connected_type'  => 'orbis_projects_to_persons',
+			'connected_items' => get_queried_object(),
+			'nopaging'        => true, // phpcs:ignore WordPress.VIP.PostsPerPage.posts_per_page_nopaging
+		] 
+	);
 
 	if ( $query->have_posts() ) :
 
-	?>
+		?>
 
 		<ul class="post-list">
 			<?php while ( $query->have_posts() ) : ?>
@@ -60,7 +62,7 @@
 		<div class="card-body">
 
 			<p class="text-muted m-0">
-				<?php esc_html_e( 'No persons involved.', 'orbis' ); ?>
+				<?php esc_html_e( 'No persons involved.', 'orbis-4' ); ?>
 			</p>
 
 		</div>

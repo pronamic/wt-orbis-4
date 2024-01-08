@@ -4,7 +4,7 @@ use Pronamic\WordPress\Money\Money;
 /**
  * Date query
  */
-$date_query = array();
+$date_query = [];
 
 $date = filter_input( INPUT_GET, 'date', FILTER_SANITIZE_STRING );
 
@@ -15,37 +15,37 @@ if ( ! empty( $date ) ) {
 	$month = $date[1];
 	$day   = $date[2];
 
-	$date_query[] = array(
-		'after'     => array(
+	$date_query[] = [
+		'after'     => [
 			'year'  => $year,
 			'month' => $month,
 			'day'   => $day,
-		),
+		],
 		'inclusive' => true,
-	);
+	];
 } else {
-	$date_query[] = array(
+	$date_query[] = [
 		'column' => 'post_date_gmt',
 		'after'  => '1 year ago',
-	);
+	];
 }
 
 /**
  * Pending deals
  */
 $pending_deals_query = new WP_Query(
-	array(
+	[
 		'post_type'      => 'orbis_deal',
 		'posts_per_page' => 50,
 		'date_query'     => $date_query,
-		'meta_query'     => array( // WPCS: slow query ok.
-			array(
+		'meta_query'     => [ // WPCS: slow query ok.
+			[
 				'key'     => '_orbis_deal_status',
 				'value'   => 'pending',
 				'compare' => 'LIKE',
-			),
-		),
-	)
+			],
+		],
+	]
 );
 
 $pending_deals = $pending_deals_query->found_posts;
@@ -72,18 +72,18 @@ if ( $pending_deals_query->have_posts() ) {
  * Won deals
  */
 $won_deals_query = new WP_Query(
-	array(
+	[
 		'post_type'      => 'orbis_deal',
 		'posts_per_page' => 50,
 		'date_query'     => $date_query,
-		'meta_query'     => array( // WPCS: slow query ok.
-			array(
+		'meta_query'     => [ // WPCS: slow query ok.
+			[
 				'key'     => '_orbis_deal_status',
 				'value'   => 'won',
 				'compare' => 'LIKE',
-			),
-		),
-	)
+			],
+		],
+	]
 );
 
 $won_deals = $won_deals_query->found_posts;
@@ -92,18 +92,18 @@ $won_deals = $won_deals_query->found_posts;
  * Lost deals
  */
 $lost_deals_query = new WP_Query(
-	array(
+	[
 		'post_type'      => 'orbis_deal',
 		'posts_per_page' => 50,
 		'date_query'     => $date_query,
-		'meta_query'     => array( // WPCS: slow query ok.
-			array(
+		'meta_query'     => [ // WPCS: slow query ok.
+			[
 				'key'     => '_orbis_deal_status',
 				'value'   => 'lost',
 				'compare' => 'LIKE',
-			),
-		),
-	)
+			],
+		],
+	]
 );
 
 $lost_deals = $lost_deals_query->found_posts;
@@ -136,22 +136,22 @@ if ( $total_deals ) {
 
 		<div class="row">
 			<div class="col-md-3">
-				<p><?php esc_html_e( 'Won deals', 'orbis' ); ?></p>
+				<p><?php esc_html_e( 'Won deals', 'orbis-4' ); ?></p>
 				<h1><?php echo esc_html( round( $won_deals, 2 ) ); ?></h1>
 			</div>
 
 			<div class="col-md-3">
-				<p><?php esc_html_e( 'Lost deals', 'orbis' ); ?></p>
+				<p><?php esc_html_e( 'Lost deals', 'orbis-4' ); ?></p>
 				<h1><?php echo esc_html( round( $lost_deals, 2 ) ); ?></h1>
 			</div>
 
 			<div class="col-md-3">
-				<p><?php esc_html_e( 'Pending deals', 'orbis' ); ?></p>
+				<p><?php esc_html_e( 'Pending deals', 'orbis-4' ); ?></p>
 				<h1><?php echo esc_html( round( $pending_deals, 2 ) ); ?></h1>
 			</div>
 
 			<div class="col-md-3">
-				<p><?php esc_html_e( 'Total amount open', 'orbis' ); ?></p>
+				<p><?php esc_html_e( 'Total amount open', 'orbis-4' ); ?></p>
 				<h1>
 					<?php
 					$total_amount = new Money( $total_amount, 'EUR' );

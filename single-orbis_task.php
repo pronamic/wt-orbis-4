@@ -3,7 +3,7 @@
 <?php
 while ( have_posts() ) :
 	the_post();
-?>
+	?>
 
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="row">
@@ -11,7 +11,7 @@ while ( have_posts() ) :
 				<?php do_action( 'orbis_before_main_content' ); ?>
 
 				<div class="card mb-3">
-					<div class="card-header"><?php esc_html_e( 'Description', 'orbis' ); ?></div>
+					<div class="card-header"><?php esc_html_e( 'Description', 'orbis-4' ); ?></div>
 					<div class="card-body">
 
 						<div class="card-text clearfix">
@@ -37,30 +37,30 @@ while ( have_posts() ) :
 				<?php do_action( 'orbis_before_side_content' ); ?>
 
 				<div class="card">
-					<div class="card-header"><?php esc_html_e( 'Additional Information', 'orbis' ); ?></div>
+					<div class="card-header"><?php esc_html_e( 'Additional Information', 'orbis-4' ); ?></div>
 					<div class="card-body">
 
 						<div class="card-text">
 							<dl>
-								<dt><?php esc_html_e( 'Posted on', 'orbis' ); ?></dt>
+								<dt><?php esc_html_e( 'Posted on', 'orbis-4' ); ?></dt>
 								<dd><?php echo esc_html( get_the_date() ); ?></dd>
 
-								<dt><?php esc_html_e( 'Posted by', 'orbis' ); ?></dt>
+								<dt><?php esc_html_e( 'Posted by', 'orbis-4' ); ?></dt>
 								<dd><?php echo esc_html( get_the_author() ); ?></dd>
 
-								<dt><?php esc_html_e( 'Project', 'orbis' ); ?></dt>
+								<dt><?php esc_html_e( 'Project', 'orbis-4' ); ?></dt>
 								<dd><?php orbis_task_project(); ?></dd>
 
-								<dt><?php esc_html_e( 'Assignee', 'orbis' ); ?></dt>
+								<dt><?php esc_html_e( 'Assignee', 'orbis-4' ); ?></dt>
 								<dd><?php orbis_task_assignee(); ?></dd>
 
-								<dt><?php esc_html_e( 'Deadline', 'orbis' ); ?></dt>
+								<dt><?php esc_html_e( 'Deadline', 'orbis-4' ); ?></dt>
 								<dd><?php orbis_task_due_at(); ?></dd>
 
 								<?php if ( null !== get_edit_post_link() ) : ?>
 
-									<dt><?php esc_html_e( 'Actions', 'orbis' ); ?></dt>
-									<dd><?php edit_post_link( __( 'Edit', 'orbis' ) ); ?></dd>
+									<dt><?php esc_html_e( 'Actions', 'orbis-4' ); ?></dt>
+									<dd><?php edit_post_link( __( 'Edit', 'orbis-4' ) ); ?></dd>
 
 								<?php endif; ?>
 							</dl>

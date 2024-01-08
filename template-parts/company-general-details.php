@@ -25,7 +25,7 @@ $twinfield_customer_id = get_post_meta( $post->ID, '_twinfield_customer_id', tru
 <dl>
 	<?php if ( ! empty( $address ) || ! empty( $postcode ) || ! empty( $country ) ) : ?>
 
-		<dt><?php esc_html_e( 'Address', 'orbis' ); ?></dt>
+		<dt><?php esc_html_e( 'Address', 'orbis-4' ); ?></dt>
 		<dd>
 			<?php echo esc_html( $address ); ?><br />
 			<?php echo esc_html( $postcode . ' ' . $city ); ?><br />
@@ -36,7 +36,7 @@ $twinfield_customer_id = get_post_meta( $post->ID, '_twinfield_customer_id', tru
 
 	<?php if ( ! empty( $website ) ) : ?>
 
-		<dt><?php esc_html_e( 'Website', 'orbis' ); ?></dt>
+		<dt><?php esc_html_e( 'Website', 'orbis-4' ); ?></dt>
 		<dd>
 			<a href="<?php echo esc_attr( $website ); ?>" target="_blank"><?php echo esc_html( $website ); ?></a>
 		</dd>
@@ -45,7 +45,7 @@ $twinfield_customer_id = get_post_meta( $post->ID, '_twinfield_customer_id', tru
 
 	<?php if ( ! empty( $email ) ) : ?>
 
-		<dt><?php esc_html_e( 'E-Mail', 'orbis' ); ?></dt>
+		<dt><?php esc_html_e( 'E-Mail', 'orbis-4' ); ?></dt>
 		<dd>
 			<a href="mailto:<?php echo esc_attr( $email ); ?>" target="_blank"><?php echo esc_html( $email ); ?></a>
 		</dd>
@@ -54,7 +54,7 @@ $twinfield_customer_id = get_post_meta( $post->ID, '_twinfield_customer_id', tru
 
 	<?php if ( ! empty( $accounting_email ) ) : ?>
 
-		<dt><?php esc_html_e( 'Accounting E-Mail', 'orbis' ); ?></dt>
+		<dt><?php esc_html_e( 'Accounting E-Mail', 'orbis-4' ); ?></dt>
 		<dd>
 			<a href="mailto:<?php echo esc_attr( $accounting_email ); ?>" target="_blank"><?php echo esc_html( $accounting_email ); ?></a>
 		</dd>
@@ -63,7 +63,7 @@ $twinfield_customer_id = get_post_meta( $post->ID, '_twinfield_customer_id', tru
 
 	<?php if ( ! empty( $invoice_email ) ) : ?>
 
-		<dt><?php esc_html_e( 'Invoice E-Mail', 'orbis' ); ?></dt>
+		<dt><?php esc_html_e( 'Invoice E-Mail', 'orbis-4' ); ?></dt>
 		<dd>
 			<a href="mailto:<?php echo esc_attr( $invoice_email ); ?>" target="_blank"><?php echo esc_html( $invoice_email ); ?></a>
 		</dd>
@@ -72,7 +72,7 @@ $twinfield_customer_id = get_post_meta( $post->ID, '_twinfield_customer_id', tru
 
 	<?php if ( ! empty( $invoice_header_text ) ) : ?>
 
-		<dt><?php esc_html_e( 'Invoice Header Text', 'orbis' ); ?></dt>
+		<dt><?php esc_html_e( 'Invoice Header Text', 'orbis-4' ); ?></dt>
 		<dd>
 			<?php echo nl2br( esc_html( $invoice_header_text ) ); ?></a>
 		</dd>
@@ -81,7 +81,7 @@ $twinfield_customer_id = get_post_meta( $post->ID, '_twinfield_customer_id', tru
 
 	<?php if ( ! empty( $invoice_footer_text ) ) : ?>
 
-		<dt><?php esc_html_e( 'Invoice Footer Text', 'orbis' ); ?></dt>
+		<dt><?php esc_html_e( 'Invoice Footer Text', 'orbis-4' ); ?></dt>
 		<dd>
 			<?php echo nl2br( esc_html( $invoice_footer_text ) ); ?></a>
 		</dd>
@@ -90,7 +90,7 @@ $twinfield_customer_id = get_post_meta( $post->ID, '_twinfield_customer_id', tru
 
 	<?php if ( ! empty( $kvk_number ) ) : ?>
 
-		<dt><?php esc_html_e( 'KvK Number', 'orbis' ); ?></dt>
+		<dt><?php esc_html_e( 'KvK Number', 'orbis-4' ); ?></dt>
 		<dd>
 			<?php echo esc_html( $kvk_number ); ?>
 
@@ -108,33 +108,33 @@ $twinfield_customer_id = get_post_meta( $post->ID, '_twinfield_customer_id', tru
 
 	<?php if ( ! empty( $vat_number ) ) : ?>
 
-		<dt><?php esc_html_e( 'VAT Number', 'orbis' ); ?></dt>
+		<dt><?php esc_html_e( 'VAT Number', 'orbis-4' ); ?></dt>
 		<dd><?php echo esc_html( $vat_number ); ?></dd>
 
 	<?php endif; ?>
 
 	<?php if ( has_term( null, 'orbis_payment_method' ) ) : ?>
 
-		<dt><?php esc_html_e( 'Payment Method', 'orbis' ); ?></dt>
+		<dt><?php esc_html_e( 'Payment Method', 'orbis-4' ); ?></dt>
 		<dd><?php the_terms( null, 'orbis_payment_method' ); ?></dd>
 
 	<?php endif; ?>
 
 	<?php if ( has_term( null, 'orbis_invoice_shipping_method' ) ) : ?>
 
-		<dt><?php esc_html_e( 'Invoice Shipping Method', 'orbis' ); ?></dt>
+		<dt><?php esc_html_e( 'Invoice Shipping Method', 'orbis-4' ); ?></dt>
 		<dd><?php the_terms( null, 'orbis_invoice_shipping_method' ); ?></dd>
 
 	<?php endif; ?>
 
-		<dt><?php esc_html_e( 'vCard', 'orbis' ); ?></dt>
+		<dt><?php esc_html_e( 'vCard', 'orbis-4' ); ?></dt>
 		<dd>
 			<?php
 
 			printf(
 				'<a href="%s">%s</a>',
 				esc_attr( get_permalink() . 'vcard/' ),
-				esc_html__( 'Download vCard', 'orbis' )
+				esc_html__( 'Download vCard', 'orbis-4' )
 			);
 
 			?>
@@ -142,7 +142,7 @@ $twinfield_customer_id = get_post_meta( $post->ID, '_twinfield_customer_id', tru
 
 	<?php if ( ! empty( $twinfield_customer_id ) ) : ?>
 
-		<dt><?php esc_html_e( 'Twinfield ID', 'orbis' ); ?></dt>
+		<dt><?php esc_html_e( 'Twinfield ID', 'orbis-4' ); ?></dt>
 		<dd>
 			<?php
 

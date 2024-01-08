@@ -11,9 +11,9 @@
 			<table class="table table-striped table-condense table-hover">
 				<thead>
 					<tr>
-						<th><?php esc_html_e( 'Task', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Assignee', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Due At', 'orbis' ); ?></th>
+						<th><?php esc_html_e( 'Task', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Assignee', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Due At', 'orbis-4' ); ?></th>
 						<th></th>
 					</tr>
 				</thead>
@@ -32,7 +32,7 @@
 							$days    = round( $delta / ( 3600 * 24 ) );
 
 							if ( $days < 0 ) {
-								$due_at_ouput = sprintf( __( '<span class="label label-danger">%d days</span>', 'orbis' ), $days ); //phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
+								$due_at_ouput = sprintf( __( '<span class="label label-danger">%d days</span>', 'orbis-4' ), $days ); //phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
 							} else {
 								$due_at_ouput = '';
 							}

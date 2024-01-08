@@ -1,10 +1,10 @@
 <div class="card mb-3">
-	<div class="card-header"><?php esc_html_e( 'Monitor Details', 'orbis' ); ?></div>
+	<div class="card-header"><?php esc_html_e( 'Monitor Details', 'orbis-4' ); ?></div>
 	<div class="card-body">
 
 		<div class="content">
 			<dl>
-				<dt><?php esc_html_e( 'URL', 'orbis' ); ?></dt>
+				<dt><?php esc_html_e( 'URL', 'orbis-4' ); ?></dt>
 				<dd>
 					<?php
 
@@ -20,7 +20,7 @@
 					?>
 				</dd>
 
-				<dt><?php esc_html_e( 'Required Response Code', 'orbis' ); ?></dt>
+				<dt><?php esc_html_e( 'Required Response Code', 'orbis-4' ); ?></dt>
 				<dd>
 					<?php
 
@@ -31,7 +31,7 @@
 					?>
 				</dd>
 
-				<dt><?php esc_html_e( 'Required location', 'orbis' ); ?></dt>
+				<dt><?php esc_html_e( 'Required location', 'orbis-4' ); ?></dt>
 				<dd>
 					<?php
 

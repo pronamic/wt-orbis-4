@@ -9,11 +9,11 @@ add_filter( 'widget_text', 'do_shortcode' );
  * Fix shortcode output
  */
 function orbis_shortcode_empty_paragraph_fix( $content ) {
-	$array = array(
+	$array = [
 		'<p>['    => '[',
 		']</p>'   => ']',
 		']<br />' => ']',
-	);
+	];
 
 	$content = strtr( $content, $array );
 
@@ -32,10 +32,13 @@ function orbis_row_grid( $atts, $content = null ) {
 }
 
 function orbis_columns_grid( $atts, $content = null ) {
-	$atts = shortcode_atts( array(
-		'number' => '12',
-		'offset' => '',
-	), $atts );
+	$atts = shortcode_atts(
+		[
+			'number' => '12',
+			'offset' => '',
+		],
+		$atts 
+	);
 
 	return '<div class="col-md-' . $atts['number'] . ' ' . ( $atts['offset'] ? 'col-md-offset-' . $atts['offset'] : '' ) . '">' . do_shortcode( $content ) . '</div>';
 }
@@ -47,9 +50,12 @@ add_shortcode( 'col', 'orbis_columns_grid' );
  * Panel
  */
 function orbis_panel_shortcode( $atts, $content = null ) {
-	$atts = shortcode_atts( array(
-		'class' => '',
-	), $atts );
+	$atts = shortcode_atts(
+		[
+			'class' => '',
+		],
+		$atts 
+	);
 
 	return '<div class="panel ' . $atts['class'] . '"><div class="content">' . do_shortcode( $content ) . '</div></div>';
 }
@@ -60,9 +66,12 @@ add_shortcode( 'panel', 'orbis_panel_shortcode' );
  * Table
  */
 function orbis_table_shortcode( $atts, $content = null ) {
-	$atts = shortcode_atts( array(
-		'classes' => '',
-	), $atts );
+	$atts = shortcode_atts(
+		[
+			'classes' => '',
+		],
+		$atts 
+	);
 
 	$content = str_replace( '<table', '<table class="table ' . $atts['classes'] . '"', do_shortcode( $content ) );
 
@@ -75,9 +84,12 @@ add_shortcode( 'table', 'orbis_table_shortcode' );
  * Icon
  */
 function orbis_icon_shortcode( $atts, $content = null ) {
-	$atts = shortcode_atts( array(
-		'type' => 'phone',
-	), $atts );
+	$atts = shortcode_atts(
+		[
+			'type' => 'phone',
+		],
+		$atts 
+	);
 
 	return '<i class="fa fa-' . $atts['type'] . '"></i>';
 }

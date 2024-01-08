@@ -5,7 +5,7 @@
  */
 class Orbis_Comments_Widget extends WP_Widget {
 	public function __construct() {
-		parent::__construct( 'orbis-comments', __( 'Orbis - Comments', 'orbis' ) );
+		parent::__construct( 'orbis-comments', __( 'Orbis - Comments', 'orbis-4' ) );
 	}
 
 	public function widget( $args, $instance ) {
@@ -20,9 +20,11 @@ class Orbis_Comments_Widget extends WP_Widget {
 			echo $before_title . $title . $after_title; // WPCS: XSS ok.
 		}
 
-		$comments = get_comments( array(
-			'number' => $number,
-		) );
+		$comments = get_comments(
+			[
+				'number' => $number,
+			] 
+		);
 
 		?>
 
@@ -37,13 +39,13 @@ class Orbis_Comments_Widget extends WP_Widget {
 						$comment_meta = get_comment_meta( $comment->comment_ID );
 
 						if ( array_key_exists( 'orbis_keychain_password_request', $comment_meta ) ) {
-							$label = __( 'Keychain', 'orbis' );
+							$label = __( 'Keychain', 'orbis-4' );
 							$class = 'label-info';
 						} elseif ( array_key_exists( 'orbis_subscription_extend_request', $comment_meta ) ) {
-							$label = __( 'Subscription', 'orbis' );
+							$label = __( 'Subscription', 'orbis-4' );
 							$class = 'label-success';
 						} else {
-							$label = __( 'Comment', 'orbis' );
+							$label = __( 'Comment', 'orbis-4' );
 							$class = 'label-default';
 						}
 
@@ -61,7 +63,7 @@ class Orbis_Comments_Widget extends WP_Widget {
 									<?php
 
 									printf(
-										esc_html__( 'Posted by %1$s on %2$s', 'orbis' ),
+										esc_html__( 'Posted by %1$s on %2$s', 'orbis-4' ),
 										esc_html( $comment->comment_author ),
 										esc_html( get_comment_date( 'H:i', $comment->comment_ID ) )
 									);
@@ -103,21 +105,21 @@ class Orbis_Comments_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
-				<?php esc_html_e( 'Title:', 'orbis' ); ?>
+				<?php esc_html_e( 'Title:', 'orbis-4' ); ?>
 			</label>
 
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number:', 'orbis' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number:', 'orbis-4' ); ?></label>
 
 			<select id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>">
 				<?php while ( $i <= 10 ) : ?>
 
 					<option value="<?php echo esc_attr( $i ); ?>"<?php selected( $number === $i ); ?>><?php echo esc_html( $i ); ?></option>
 
-					<?php $i++; ?>
+					<?php ++$i; ?>
 
 				<?php endwhile; ?>
 			</select>

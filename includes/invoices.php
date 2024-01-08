@@ -1,12 +1,12 @@
 <?php
 
 function orbis_project_sections_invoices( $sections ) {
-	$sections[] = array(
+	$sections[] = [
 		'id'            => 'invoices',
-		'slug'          => __( 'invoices', 'orbis' ),
-		'name'          => __( 'Invoices', 'orbis' ),
+		'slug'          => __( 'invoices', 'orbis-4' ),
+		'name'          => __( 'Invoices', 'orbis-4' ),
 		'template_part' => 'templates/project_invoices',
-	);
+	];
 
 	return $sections;
 }

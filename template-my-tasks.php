@@ -76,7 +76,7 @@ get_header();
 
 	img.avatar {
 		-webkit-border-radius: 100px;
-		   -moz-border-radius: 100px;<?php // phpcs:ignore WordPress.WhiteSpace.PrecisionAlignment.Found ?>
+			-moz-border-radius: 100px;<?php // phpcs:ignore WordPress.WhiteSpace.PrecisionAlignment.Found ?>
 				border-radius: 100px;
 	}
 
@@ -102,7 +102,7 @@ get_header();
 		background: #f6f6f6;
 
 		-webkit-border-radius: 20px;
-		   -moz-border-radius: 20px;<?php // phpcs:ignore WordPress.WhiteSpace.PrecisionAlignment.Found ?>
+			-moz-border-radius: 20px;<?php // phpcs:ignore WordPress.WhiteSpace.PrecisionAlignment.Found ?>
 				border-radius: 20px;
 
 		color: #999;
@@ -137,7 +137,7 @@ get_header();
 		border: 1px solid #ccc;
 
 		-webkit-border-radius: 3px;
-		   -moz-border-radius: 3px;<?php // phpcs:ignore WordPress.WhiteSpace.PrecisionAlignment.Found ?>
+			-moz-border-radius: 3px;<?php // phpcs:ignore WordPress.WhiteSpace.PrecisionAlignment.Found ?>
 				border-radius: 3px;
 
 		display: none;
@@ -202,7 +202,7 @@ get_header();
 <?php
 while ( have_posts() ) :
 	the_post();
-?>
+	?>
 
 	<div ng-controller="OrbisTasksCtrl">
 		<div class="card">
@@ -244,7 +244,7 @@ while ( have_posts() ) :
 									</form>
 
 									<span class="label" ng-class="task.done ? 'label-default' : ( task.days_left <= 0 && ! task.done ) ? 'label-danger' : 'label-success'">
-										<ng-pluralize count="task.days_left" when="{'1': '<?php esc_attr_e( '1 day', 'orbis' ); ?>', 'other': '<?php esc_attr_e( '{} days', 'orbis' ); ?>'}"></ng-pluralize>
+										<ng-pluralize count="task.days_left" when="{'1': '<?php esc_attr_e( '1 day', 'orbis-4' ); ?>', 'other': '<?php esc_attr_e( '{} days', 'orbis-4' ); ?>'}"></ng-pluralize>
 									</span>
 								</td>
 							</tr>

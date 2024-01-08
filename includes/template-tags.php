@@ -17,10 +17,12 @@ add_filter( 'wp_page_menu_args', 'orbis_page_menu_args' );
  * Display navigation to next/previous pages when applicable
  */
 function orbis_content_nav() {
-	$html = get_the_posts_pagination( array(
-		'mid_size' => 2,
-		'type'     => 'list',
-	) );
+	$html = get_the_posts_pagination(
+		[
+			'mid_size' => 2,
+			'type'     => 'list',
+		] 
+	);
 
 	if ( empty( $html ) ) {
 		return;
@@ -42,9 +44,9 @@ function orbis_content_nav() {
 		$nav->ul['class'] = 'pagination';
 
 		foreach ( $nav->ul->li as $li ) {
-			$classes = array(
+			$classes = [
 				'page-item',
-			);
+			];
 
 			$child = null;
 
@@ -103,15 +105,15 @@ function orbis_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 
 	switch ( $comment->comment_type ) :
-		case 'pingback'  :
-		case 'trackback' :
+		case 'pingback':
+		case 'trackback':
 			?>
 			<li class="post pingback">
-				<p><?php esc_html_e( 'Pingback:', 'orbis' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'orbis' ), ' ' ); ?></p>
+				<p><?php esc_html_e( 'Pingback:', 'orbis-4' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'orbis-4' ), ' ' ); ?></p>
 			<?php
 			break;
 
-		default :
+		default:
 			?>
 			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 				<div id="comment-<?php comment_ID(); ?>" class="comment-content">
@@ -121,7 +123,7 @@ function orbis_comment( $comment, $args, $depth ) {
 					<?php
 
 					printf(
-						__( '%s <span class="says">says:</span>', 'orbis' ),
+						__( '%s <span class="says">says:</span>', 'orbis-4' ),
 						sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() )
 					);
 
@@ -130,7 +132,7 @@ function orbis_comment( $comment, $args, $depth ) {
 
 				<?php if ( $comment->comment_approved == '0' ) : ?>
 
-					<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'orbis' ); ?></em><br />
+					<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'orbis-4' ); ?></em><br />
 
 				<?php endif; ?>
 
@@ -141,7 +143,7 @@ function orbis_comment( $comment, $args, $depth ) {
 						'<a href="%s">%s</a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						sprintf(
-							esc_html__( '%1$s at %2$s', 'orbis' ),
+							esc_html__( '%1$s at %2$s', 'orbis-4' ),
 							get_comment_date(),
 							get_comment_time()
 						)
@@ -149,7 +151,7 @@ function orbis_comment( $comment, $args, $depth ) {
 
 					echo ' ';
 
-					edit_comment_link( __( '(Edit)', 'orbis' ), ' ' );
+					edit_comment_link( __( '(Edit)', 'orbis-4' ), ' ' );
 
 					?>
 				</div>
@@ -159,7 +161,17 @@ function orbis_comment( $comment, $args, $depth ) {
 				</div>
 
 				<div class="reply">
-					<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+					<?php 
+					comment_reply_link(
+						array_merge(
+							$args,
+							[
+								'depth'     => $depth,
+								'max_depth' => $args['max_depth'],
+							] 
+						) 
+					); 
+					?>
 				</div>
 			</div>
 
@@ -174,13 +186,13 @@ function orbis_comment( $comment, $args, $depth ) {
  */
 function orbis_posted_on() {
 	printf(
-		__( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'orbis' ),
+		__( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'orbis-4' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
-		esc_url( get_author_posts_url(get_the_author_meta('ID') ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'orbis' ), get_the_author() ) ),
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'orbis-4' ), get_the_author() ) ),
 		get_the_author()
 	);
 }

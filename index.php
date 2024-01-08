@@ -11,8 +11,8 @@
 			<thead>
 				<tr>
 					<?php if ( is_search() ) : ?>
-					<th><?php esc_html_e( 'Type', 'orbis' ); ?></th><?php endif; ?>
-					<th><?php esc_html_e( 'Title', 'orbis' ); ?></th>
+					<th><?php esc_html_e( 'Type', 'orbis-4' ); ?></th><?php endif; ?>
+					<th><?php esc_html_e( 'Title', 'orbis-4' ); ?></th>
 					<th></th>
 				</tr>
 			</thead>
@@ -20,7 +20,7 @@
 				<?php
 				while ( have_posts() ) :
 					the_post();
-				?>
+					?>
 
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<?php if ( is_search() ) : ?>

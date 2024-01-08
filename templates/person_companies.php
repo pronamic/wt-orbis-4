@@ -8,15 +8,17 @@ if ( ! p2p_connection_exists( 'orbis_persons_to_companies' ) ) {
 	return;
 }
 
-$query = new WP_Query( array(
-	'connected_type'  => 'orbis_persons_to_companies',
-	'connected_items' => get_queried_object(),
-	'nopaging'        => true, // phpcs:ignore WordPress.VIP.PostsPerPage.posts_per_page_nopaging
-) );
+$query = new WP_Query(
+	[
+		'connected_type'  => 'orbis_persons_to_companies',
+		'connected_items' => get_queried_object(),
+		'nopaging'        => true, // phpcs:ignore WordPress.VIP.PostsPerPage.posts_per_page_nopaging
+	] 
+);
 
 ?>
 <div class="card mb-3">
-	<div class="card-header"><?php esc_html_e( 'Connected Companies', 'orbis' ); ?></div>
+	<div class="card-header"><?php esc_html_e( 'Connected Companies', 'orbis-4' ); ?></div>
 
 	<?php if ( $query->have_posts() ) : ?>
 
@@ -24,7 +26,7 @@ $query = new WP_Query( array(
 			<?php
 			while ( $query->have_posts() ) :
 				$query->the_post();
-			?>
+				?>
 
 				<li>
 					<?php
@@ -52,7 +54,7 @@ $query = new WP_Query( array(
 
 		<div class="card-body">
 			<p class="text-muted m-0">
-				<?php esc_html_e( 'No companies connected.', 'orbis' ); ?>
+				<?php esc_html_e( 'No companies connected.', 'orbis-4' ); ?>
 			</p>
 		</div>
 

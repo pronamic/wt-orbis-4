@@ -12,7 +12,7 @@ function orbis_nav_menu_icons( $classes, $item, $args ) {
 		if ( 0 === $icon ) {
 			$class = str_replace( 'icon-fab-', 'fab fa-', $class );
 			$class = str_replace( 'icon-far-', 'far fa-', $class );
-			$class = str_replace( 'icon-fas-', 'fas fa-', $class );			
+			$class = str_replace( 'icon-fas-', 'fas fa-', $class );         
 
 			$fa = $class;
 		}

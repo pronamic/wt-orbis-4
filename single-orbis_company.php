@@ -3,13 +3,13 @@
 <?php
 while ( have_posts() ) :
 	the_post();
-?>
+	?>
 
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="row row-cols-1 row-cols-md-3 mb-3">
 			<div class="col">
 				<div class="card">
-					<div class="card-header"><?php esc_html_e( 'Details', 'orbis' ); ?></div>
+					<div class="card-header"><?php esc_html_e( 'Details', 'orbis-4' ); ?></div>
 
 					<div class="card-body">
 						<?php get_template_part( 'template-parts/company-general-details' ); ?>
@@ -19,7 +19,7 @@ while ( have_posts() ) :
 
 			<div class="col">
 				<div class="card">
-					<div class="card-header"><?php esc_html_e( 'Contacts', 'orbis' ); ?></div>
+					<div class="card-header"><?php esc_html_e( 'Contacts', 'orbis-4' ); ?></div>
 
 					<?php get_template_part( 'template-parts/company-contacts' ); ?>
 				</div>
@@ -27,7 +27,7 @@ while ( have_posts() ) :
 
 			<div class="col">
 				<div class="card">
-					<div class="card-header"><?php esc_html_e( 'Users', 'orbis' ); ?></div>
+					<div class="card-header"><?php esc_html_e( 'Users', 'orbis-4' ); ?></div>
 
 					<?php get_template_part( 'template-parts/company-users' ); ?>
 				</div>
@@ -41,7 +41,7 @@ while ( have_posts() ) :
 				<?php if ( ! empty( get_the_content() ) ) : ?>
 
 				<div class="card mb-3">
-					<div class="card-header"><?php esc_html_e( 'Description', 'orbis' ); ?></div>
+					<div class="card-header"><?php esc_html_e( 'Description', 'orbis-4' ); ?></div>
 
 					<div class="card-body">
 						<?php the_content(); ?>
@@ -63,20 +63,20 @@ while ( have_posts() ) :
 				<?php get_template_part( 'templates/company_twitter' ); ?>
 
 				<div class="card">
-					<div class="card-header"><?php esc_html_e( 'Additional Information', 'orbis' ); ?></div>
+					<div class="card-header"><?php esc_html_e( 'Additional Information', 'orbis-4' ); ?></div>
 
 					<div class="card-body">
 						<dl>
-							<dt><?php esc_html_e( 'Posted on', 'orbis' ); ?></dt>
+							<dt><?php esc_html_e( 'Posted on', 'orbis-4' ); ?></dt>
 							<dd><?php echo esc_html( get_the_date() ); ?></dd>
 
-							<dt><?php esc_html_e( 'Posted by', 'orbis' ); ?></dt>
+							<dt><?php esc_html_e( 'Posted by', 'orbis-4' ); ?></dt>
 							<dd><?php echo esc_html( get_the_author() ); ?></dd>
 
 							<?php if ( null !== get_edit_post_link() ) : ?>
 
-								<dt><?php esc_html_e( 'Actions', 'orbis' ); ?></dt>
-								<dd><?php edit_post_link( __( 'Edit', 'orbis' ) ); ?></dd>
+								<dt><?php esc_html_e( 'Actions', 'orbis-4' ); ?></dt>
+								<dd><?php edit_post_link( __( 'Edit', 'orbis-4' ) ); ?></dd>
 
 							<?php endif; ?>
 						</dl>

@@ -14,10 +14,10 @@ get_header();
 			<table class="table table-striped table-condense table-hover">
 				<thead>
 					<tr>
-						<th><?php esc_html_e( 'Title', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Costs', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Revenue', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Profit', 'orbis' ); ?></th>
+						<th><?php esc_html_e( 'Title', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Costs', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Revenue', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Profit', 'orbis-4' ); ?></th>
 						<th></th>
 					</tr>
 				</thead>
@@ -25,7 +25,7 @@ get_header();
 					<?php
 					while ( have_posts() ) :
 						the_post();
-					?>
+						?>
 
 						<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<td>

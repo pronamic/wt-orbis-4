@@ -9,7 +9,7 @@ get_header();
 <?php
 while ( have_posts() ) :
 	the_post();
-?>
+	?>
 
 	<div class="row">
 		<div class="col-md-8">
@@ -17,7 +17,7 @@ while ( have_posts() ) :
 			<?php if ( ! empty( get_the_content() ) ) : ?>
 
 			<div class="card mb-3">
-				<div class="card-header"><?php esc_html_e( 'Description', 'orbis' ); ?></div>
+				<div class="card-header"><?php esc_html_e( 'Description', 'orbis-4' ); ?></div>
 
 				<div class="card-body">
 					<?php the_content(); ?>
@@ -37,17 +37,17 @@ while ( have_posts() ) :
 
 		<div class="col-md-4">
 			<div class="card">
-				<div class="card-header"><?php esc_html_e( 'Project Status', 'orbis' ); ?></div>
+				<div class="card-header"><?php esc_html_e( 'Project Status', 'orbis-4' ); ?></div>
 
 				<div class="card-body">
-					<h5 class="entry-meta"><?php esc_html_e( 'Project budget', 'orbis' ); ?></h5>
+					<h5 class="entry-meta"><?php esc_html_e( 'Project budget', 'orbis-4' ); ?></h5>
 
 					<?php
 
 					$price = $orbis_project->get_price();
 
 					if ( $price ) :
-					?>
+						?>
 
 						<p class="project-time">
 							<?php
@@ -65,7 +65,7 @@ while ( have_posts() ) :
 
 							<?php
 
-							$classes   = array();
+							$classes   = [];
 							$classes[] = orbis_project_in_time() ? 'text-success' : 'text-error';
 
 							?>
@@ -78,13 +78,13 @@ while ( have_posts() ) :
 			</div>
 
 			<div class="card mt-3">
-				<div class="card-header"><?php esc_html_e( 'Project Details', 'orbis' ); ?></div>
+				<div class="card-header"><?php esc_html_e( 'Project Details', 'orbis-4' ); ?></div>
 
 				<div class="card-body">
 					<dl>
 						<?php if ( $orbis_project->has_principal() ) : ?>
 
-							<dt><?php esc_html_e( 'Client', 'orbis' ); ?></dt>
+							<dt><?php esc_html_e( 'Client', 'orbis-4' ); ?></dt>
 							<dd>
 								<?php
 
@@ -99,10 +99,10 @@ while ( have_posts() ) :
 
 						<?php endif; ?>
 
-						<dt><?php esc_html_e( 'Posted on', 'orbis' ); ?></dt>
+						<dt><?php esc_html_e( 'Posted on', 'orbis-4' ); ?></dt>
 						<dd><?php echo esc_html( get_the_date() ); ?></dd>
 
-						<dt><?php esc_html_e( 'Posted by', 'orbis' ); ?></dt>
+						<dt><?php esc_html_e( 'Posted by', 'orbis-4' ); ?></dt>
 						<dd><?php echo esc_html( get_the_author() ); ?></dd>
 
 						<?php
@@ -111,44 +111,44 @@ while ( have_posts() ) :
 
 						if ( ! empty( $agreement_id ) ) :
 							$agreement = get_post( $agreement_id );
-						?>
+							?>
 
-							<dt><?php esc_html_e( 'Agreement', 'orbis' ); ?></dt>
+							<dt><?php esc_html_e( 'Agreement', 'orbis-4' ); ?></dt>
 							<dd>
 								<a href="<?php echo esc_attr( get_permalink( $agreement ) ); ?>"><?php echo get_the_title( $agreement ); ?></a>
 							</dd>
 
 						<?php endif; ?>
 
-						<dt><?php esc_html_e( 'Status', 'orbis' ); ?></dt>
+						<dt><?php esc_html_e( 'Status', 'orbis-4' ); ?></dt>
 						<dd>
 							<?php if ( $orbis_project->is_finished() ) : ?>
 
-								<span class="badge text-bg-success"><?php esc_html_e( 'Finished', 'orbis' ); ?></span>
+								<span class="badge text-bg-success"><?php esc_html_e( 'Finished', 'orbis-4' ); ?></span>
 
 							<?php else : ?>
 
-								<span class="badge text-bg-secondary"><?php esc_html_e( 'Not finished', 'orbis' ); ?></span>
+								<span class="badge text-bg-secondary"><?php esc_html_e( 'Not finished', 'orbis-4' ); ?></span>
 
 							<?php endif; ?>
 
 							<?php if ( $orbis_project->is_invoiced() ) : ?>
 
-								<span class="badge text-bg-success"><?php esc_html_e( 'Invoiced', 'orbis' ); ?></span>
+								<span class="badge text-bg-success"><?php esc_html_e( 'Invoiced', 'orbis-4' ); ?></span>
 
 							<?php else : ?>
 
-								<span class="badge text-bg-secondary"><?php esc_html_e( 'Not invoiced', 'orbis' ); ?></span>
+								<span class="badge text-bg-secondary"><?php esc_html_e( 'Not invoiced', 'orbis-4' ); ?></span>
 
 							<?php endif; ?>
 
 							<?php if ( $orbis_project->is_invoicable() ) : ?>
 
-								<span class="badge text-bg-success"><?php esc_html_e( 'Invoicable', 'orbis' ); ?></span>
+								<span class="badge text-bg-success"><?php esc_html_e( 'Invoicable', 'orbis-4' ); ?></span>
 
 							<?php else : ?>
 
-								<span class="badge text-bg-secondary"><?php esc_html_e( 'Not invoicable', 'orbis' ); ?></span>
+								<span class="badge text-bg-secondary"><?php esc_html_e( 'Not invoicable', 'orbis-4' ); ?></span>
 
 							<?php endif; ?>
 							<?php
@@ -169,7 +169,7 @@ while ( have_posts() ) :
 
 						<?php if ( has_term( null, 'orbis_payment_method' ) ) : ?>
 
-							<dt><?php esc_html_e( 'Payment Method', 'orbis' ); ?></dt>
+							<dt><?php esc_html_e( 'Payment Method', 'orbis-4' ); ?></dt>
 							<dd><?php the_terms( null, 'orbis_payment_method' ); ?></dd>
 
 						<?php endif; ?>
@@ -184,7 +184,7 @@ while ( have_posts() ) :
 
 						<?php if ( ! empty( $invoice_header_text ) ) : ?>
 
-							<dt><?php esc_html_e( 'Invoice Header Text', 'orbis' ); ?></dt>
+							<dt><?php esc_html_e( 'Invoice Header Text', 'orbis-4' ); ?></dt>
 							<dd>
 								<?php echo nl2br( esc_html( $invoice_header_text ) ); ?></a>
 							</dd>
@@ -193,7 +193,7 @@ while ( have_posts() ) :
 
 						<?php if ( ! empty( $invoice_footer_text ) ) : ?>
 
-							<dt><?php esc_html_e( 'Invoice Footer Text', 'orbis' ); ?></dt>
+							<dt><?php esc_html_e( 'Invoice Footer Text', 'orbis-4' ); ?></dt>
 							<dd>
 								<?php echo nl2br( esc_html( $invoice_footer_text ) ); ?></a>
 							</dd>
@@ -202,7 +202,7 @@ while ( have_posts() ) :
 
 						<?php if ( ! empty( $invoice_line_description ) ) : ?>
 
-							<dt><?php esc_html_e( 'Invoice Line Description', 'orbis' ); ?></dt>
+							<dt><?php esc_html_e( 'Invoice Line Description', 'orbis-4' ); ?></dt>
 							<dd>
 								<?php echo nl2br( esc_html( $invoice_line_description ) ); ?></a>
 							</dd>
@@ -214,9 +214,9 @@ while ( have_posts() ) :
 						$invoice_number = get_post_meta( get_the_ID(), '_orbis_project_invoice_number', true );
 
 						if ( ! empty( $invoice_number ) ) :
-						?>
+							?>
 
-							<dt><?php esc_html_e( 'Final Invoice', 'orbis' ); ?></dt>
+							<dt><?php esc_html_e( 'Final Invoice', 'orbis-4' ); ?></dt>
 							<dd>
 								<?php
 
@@ -239,8 +239,8 @@ while ( have_posts() ) :
 
 						<?php if ( null !== get_edit_post_link() ) : ?>
 
-							<dt><?php esc_html_e( 'Actions', 'orbis' ); ?></dt>
-							<dd><?php edit_post_link( __( 'Edit', 'orbis' ) ); ?></dd>
+							<dt><?php esc_html_e( 'Actions', 'orbis-4' ); ?></dt>
+							<dd><?php edit_post_link( __( 'Edit', 'orbis-4' ) ); ?></dd>
 
 						<?php endif; ?>
 					</dl>
@@ -248,11 +248,11 @@ while ( have_posts() ) :
 			</div>
 
 			<div class="card" style="display: none;">
-				<div class="card-header"><?php esc_html_e( 'Project Invoices', 'orbis' ); ?></div>
+				<div class="card-header"><?php esc_html_e( 'Project Invoices', 'orbis-4' ); ?></div>
 
 				<div class="card-body">
 					<dl>
-						<dt><?php esc_html_e( 'Posted by', 'orbis' ); ?></dt>
+						<dt><?php esc_html_e( 'Posted by', 'orbis-4' ); ?></dt>
 						<dd><?php echo esc_html( get_the_author() ); ?></dd>
 					</dl>
 				</div>

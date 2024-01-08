@@ -8,8 +8,8 @@ class Orbis_Theme_Scripts {
 	 * Construct
 	 */
 	public function __construct() {
-		add_action( 'wp_enqueue_scripts', array( $this, 'register' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
+		add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
 	}
 
 	/**
@@ -24,7 +24,7 @@ class Orbis_Theme_Scripts {
 		wp_register_script(
 			'tether',
 			$uri . '/assets/tether/js/tether' . $min . '.js',
-			array(),
+			[],
 			'1.4.6',
 			true
 		);
@@ -32,7 +32,7 @@ class Orbis_Theme_Scripts {
 		wp_register_style(
 			'tether',
 			$uri . '/assets/tether/css/tether' . $min . '.css',
-			array(),
+			[],
 			'1.4.6'
 		);
 
@@ -40,7 +40,7 @@ class Orbis_Theme_Scripts {
 		wp_register_script(
 			'popper',
 			$uri . '/assets/popper/popper' . $min . '.js',
-			array(),
+			[],
 			'1.16.1',
 			true
 		);
@@ -49,10 +49,10 @@ class Orbis_Theme_Scripts {
 		wp_register_script(
 			'bootstrap',
 			$uri . '/assets/bootstrap/js/bootstrap' . $min . '.js',
-			array(
+			[
 				'jquery',
 				'popper',
-			),
+			],
 			'5.2.3',
 			true
 		);
@@ -60,7 +60,7 @@ class Orbis_Theme_Scripts {
 		wp_register_style(
 			'bootstrap',
 			$uri . '/assets/bootstrap/css/bootstrap' . $min . '.css',
-			array(),
+			[],
 			'5.2.3'
 		);
 
@@ -68,7 +68,7 @@ class Orbis_Theme_Scripts {
 		wp_register_style(
 			'fontawesome',
 			$uri . '/assets/fontawesome/css/all' . $min . '.css',
-			array(),
+			[],
 			'5.15.4'
 		);
 
@@ -76,7 +76,7 @@ class Orbis_Theme_Scripts {
 		wp_register_script(
 			'flotcharts',
 			$uri . '/assets/flot/jquery.flot' . $min . '.js',
-			array( 'jquery' ),
+			[ 'jquery' ],
 			'0.8.3'
 		);
 
@@ -84,7 +84,7 @@ class Orbis_Theme_Scripts {
 		wp_register_script(
 			'flotcharts-time',
 			$uri . '/assets/flot/jquery.flot.time' . $min . '.js',
-			array( 'jquery' ),
+			[ 'jquery' ],
 			'1.0.0'
 		);
 
@@ -92,11 +92,11 @@ class Orbis_Theme_Scripts {
 		wp_register_script(
 			'wt-orbis',
 			$uri . '/assets/orbis/js/script' . $min . '.js',
-			array(
+			[
 				'jquery',
 				'bootstrap',
 				'tether',
-			),
+			],
 			'3.0.1',
 			true
 		);
@@ -104,18 +104,18 @@ class Orbis_Theme_Scripts {
 		wp_localize_script(
 			'wt-orbis',
 			'orbis_timesheets_vars',
-			array(
+			[
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
-			)
+			]
 		);
 
 		wp_register_style(
 			'wt-orbis',
 			$uri . '/css/style' . $min . '.css',
-			array(
+			[
 				'bootstrap',
 				'fontawesome',
-			),
+			],
 			'3.0.1'
 		);
 	}

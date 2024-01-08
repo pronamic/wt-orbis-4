@@ -2,11 +2,13 @@
 
 use Pronamic\WordPress\Money\Money;
 
-$query = new WP_Query( array(
-	'post_type'               => 'orbis_project',
-	'posts_per_page'          => 25,
-	'orbis_project_client_id' => get_the_ID(),
-) );
+$query = new WP_Query(
+	[
+		'post_type'               => 'orbis_project',
+		'posts_per_page'          => 25,
+		'orbis_project_client_id' => get_the_ID(),
+	] 
+);
 
 if ( $query->have_posts() ) : ?>
 
@@ -14,9 +16,9 @@ if ( $query->have_posts() ) : ?>
 		<table class="table table-striped mb-0">
 			<thead>
 				<tr>
-					<th class="border-top-0"><?php esc_html_e( 'Project', 'orbis' ); ?></th>
-					<th class="border-top-0"><?php esc_html_e( 'Price', 'orbis' ); ?></th>
-					<th class="border-top-0"><?php esc_html_e( 'Time', 'orbis' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'Project', 'orbis-4' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'Price', 'orbis-4' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'Time', 'orbis-4' ); ?></th>
 				</tr>
 			</thead>
 
@@ -24,7 +26,7 @@ if ( $query->have_posts() ) : ?>
 				<?php
 				while ( $query->have_posts() ) :
 					$query->the_post();
-				?>
+					?>
 
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<?php global $orbis_project; ?>
@@ -53,7 +55,7 @@ if ( $query->have_posts() ) : ?>
 
 							if ( function_exists( 'orbis_project_the_logged_time' ) ) :
 
-								$classes   = array();
+								$classes   = [];
 								$classes[] = orbis_project_in_time() ? 'text-success' : 'text-error';
 
 								?>
@@ -75,7 +77,7 @@ if ( $query->have_posts() ) : ?>
 
 	<div class="card-body">
 		<p class="text-muted m-0">
-			<?php esc_html_e( 'No projects found.', 'orbis' ); ?>
+			<?php esc_html_e( 'No projects found.', 'orbis-4' ); ?>
 		</p>
 	</div>
 

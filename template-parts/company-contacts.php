@@ -4,11 +4,13 @@ if ( ! function_exists( 'p2p_register_connection_type' ) ) {
 	return;
 }
 
-$connected = new WP_Query( array(
-	'connected_type'  => 'orbis_persons_to_companies',
-	'connected_items' => get_queried_object(),
-	'nopaging'        => true, // phpcs:ignore WordPress.VIP.PostsPerPage.posts_per_page_nopaging
-) );
+$connected = new WP_Query(
+	[
+		'connected_type'  => 'orbis_persons_to_companies',
+		'connected_items' => get_queried_object(),
+		'nopaging'        => true, // phpcs:ignore WordPress.VIP.PostsPerPage.posts_per_page_nopaging
+	] 
+);
 
 if ( $connected->have_posts() ) : ?>
 
@@ -61,10 +63,10 @@ if ( $connected->have_posts() ) : ?>
 							);
 						}
 
-						$phone_numbers = array(
+						$phone_numbers = [
 							get_post_meta( $post->ID, '_orbis_phone_number', true ),
-							get_post_meta( $post->ID, '_orbis_mobile_number', true ),									
-						);
+							get_post_meta( $post->ID, '_orbis_mobile_number', true ),                                   
+						];
 
 						$phone_numbers = array_filter( $phone_numbers );
 
@@ -90,7 +92,7 @@ if ( $connected->have_posts() ) : ?>
 
 	<div class="card-body">
 		<p class="text-muted m-0">
-			<?php esc_html_e( 'No persons connected.', 'orbis' ); ?>
+			<?php esc_html_e( 'No persons connected.', 'orbis-4' ); ?>
 		</p>
 	</div>
 

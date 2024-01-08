@@ -1,6 +1,6 @@
 <?php
 
-$sections = apply_filters( 'orbis_company_sections', array() );
+$sections = apply_filters( 'orbis_company_sections', [] );
 
 if ( ! empty( $sections ) ) : ?>
 

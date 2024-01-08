@@ -9,29 +9,31 @@ $period = isset( $_GET['period'] ) ? sanitize_text_field( wp_unslash( $_GET['per
 switch ( $period ) {
 	case 'd':
 		$groupby = 'DAY';
-		$label   = esc_html__( 'Day', 'orbis' );
+		$label   = esc_html__( 'Day', 'orbis-4' );
 		break;
 
 	case 'w':
 		$groupby = 'WEEKOFYEAR';
-		$label   = esc_html__( 'Week', 'orbis' );
+		$label   = esc_html__( 'Week', 'orbis-4' );
 		break;
 
 	case 'm':
 		$groupby = 'MONTH';
-		$label   = esc_html__( 'Month', 'orbis' );
+		$label   = esc_html__( 'Month', 'orbis-4' );
 		break;
 
 	default:
 		$groupby = 'WEEKOFYEAR';
-		$label   = esc_html__( 'Week', 'orbis' );
+		$label   = esc_html__( 'Week', 'orbis-4' );
 		break;
 }
 
 $last_year   = mktime( 0, 0, 0, date( 'm' ), date( 'd' ), date( 'Y' ) - 1 );
-$graph_title = esc_html__( 'Average Response Time Per ', 'orbis' ) . $label;
+$graph_title = esc_html__( 'Average Response Time Per ', 'orbis-4' ) . $label;
 
-$response_times = $wpdb->get_results( $wpdb->prepare( "
+$response_times = $wpdb->get_results(
+	$wpdb->prepare(
+		"
 	SELECT
 		AVG( duration ) AS avg_duration,
 		monitored_date
@@ -46,9 +48,10 @@ $response_times = $wpdb->get_results( $wpdb->prepare( "
 	ORDER BY
 		monitored_date ASC
 ",
-	$post->ID,
-	$last_year
-) );
+		$post->ID,
+		$last_year
+	) 
+);
 
 foreach ( $response_times as $response ) {
 	$date = strtotime( $response->monitored_date ) * 1000;
@@ -64,9 +67,9 @@ $response_times_json = wp_json_encode( $average_durations, JSON_NUMERIC_CHECK );
 		<?php echo esc_html( $graph_title ); ?>
 		<button class="btn btn-light dropdown-toggle m-0 p-0 float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo esc_html( ucfirst( $label ) ); ?></button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			<a class="dropdown-item" href="<?php echo esc_url( add_query_arg( 'period', 'd' ) ); ?>"><?php echo esc_html( ucfirst( __( 'Day', 'orbis' ) ) ); ?></a>
-			<a class="dropdown-item" href="<?php echo esc_url( add_query_arg( 'period', 'w' ) ); ?>"><?php echo esc_html( ucfirst( __( 'Week', 'orbis' ) ) ); ?></a>
-			<a class="dropdown-item" href="<?php echo esc_url( add_query_arg( 'period', 'm' ) ); ?>"><?php echo esc_html( ucfirst( __( 'Month', 'orbis' ) ) ); ?></a>
+			<a class="dropdown-item" href="<?php echo esc_url( add_query_arg( 'period', 'd' ) ); ?>"><?php echo esc_html( ucfirst( __( 'Day', 'orbis-4' ) ) ); ?></a>
+			<a class="dropdown-item" href="<?php echo esc_url( add_query_arg( 'period', 'w' ) ); ?>"><?php echo esc_html( ucfirst( __( 'Week', 'orbis-4' ) ) ); ?></a>
+			<a class="dropdown-item" href="<?php echo esc_url( add_query_arg( 'period', 'm' ) ); ?>"><?php echo esc_html( ucfirst( __( 'Month', 'orbis-4' ) ) ); ?></a>
 		</div>
 	</div>
 	<div class="card-body">

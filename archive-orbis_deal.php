@@ -15,12 +15,12 @@
 			<table class="table table-striped table-condense table-hover">
 				<thead>
 					<tr>
-						<th><?php esc_html_e( 'Date', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Company', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Title', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Price', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Status', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Author', 'orbis' ); ?></th>
+						<th><?php esc_html_e( 'Date', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Company', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Title', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Price', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Status', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Author', 'orbis-4' ); ?></th>
 						<th></th>
 					</tr>
 				</thead>
@@ -28,7 +28,7 @@
 					<?php
 					while ( have_posts() ) :
 						the_post();
-					?>
+						?>
 
 						<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<td>

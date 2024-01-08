@@ -1,6 +1,6 @@
 <?php
 
-$sections = array();
+$sections = [];
 
 $content = get_the_content();
 
@@ -8,11 +8,11 @@ $content = apply_filters( 'the_content', $content );
 
 if ( has_post_thumbnail() || ! empty( $content ) ) :
 
-	$sections[] = array(
+	$sections[] = [
 		'id'            => 'description',
-		'name'          => __( 'Description', 'orbis' ),
+		'name'          => __( 'Description', 'orbis-4' ),
 		'template_part' => 'templates/section-description',
-	);
+	];
 
 endif;
 
@@ -68,7 +68,7 @@ if ( ! empty( $sections ) ) : ?>
 				<?php endforeach; ?>
 			</div>
 
-		<?php else: ?>
+		<?php else : ?>
 
 			<?php foreach ( $sections as $section ) : ?>
 

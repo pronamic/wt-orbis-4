@@ -10,12 +10,12 @@ if ( is_post_type_archive() ) {
 	$action_url = orbis_get_post_type_archive_link();
 }
 
-$sorting_terms = array(
-	'author'   => esc_html__( 'Author', 'orbis' ),
-	'date'     => esc_html__( 'Date', 'orbis' ),
-	'modified' => esc_html__( 'Modified', 'orbis' ),
-	'title'    => esc_html__( 'Title', 'orbis' ),
-);
+$sorting_terms = [
+	'author'   => esc_html__( 'Author', 'orbis-4' ),
+	'date'     => esc_html__( 'Date', 'orbis-4' ),
+	'modified' => esc_html__( 'Modified', 'orbis-4' ),
+	'title'    => esc_html__( 'Title', 'orbis-4' ),
+];
 
 /*
  * add specific sorting terms per post type here
@@ -24,15 +24,15 @@ switch ( get_query_var( 'post_type' ) ) {
 	case 'orbis_subscription':
 		$sorting_terms[] = '-';
 
-		$sorting_terms['active_subscriptions'] = esc_html__( 'Active Subscriptions', 'orbis' );
+		$sorting_terms['active_subscriptions'] = esc_html__( 'Active Subscriptions', 'orbis-4' );
 		break;
 
 	case 'orbis_project':
 		$sorting_terms[] = '-';
 
-		$sorting_terms['project_finished_modified']       = esc_html__( 'Modified and Finished', 'orbis' );
-		$sorting_terms['project_invoice_number']          = esc_html__( 'Invoice Number', 'orbis' );
-		$sorting_terms['project_invoice_number_modified'] = esc_html__( 'Invoice Number Modified', 'orbis' );
+		$sorting_terms['project_finished_modified']       = esc_html__( 'Modified and Finished', 'orbis-4' );
+		$sorting_terms['project_invoice_number']          = esc_html__( 'Invoice Number', 'orbis-4' );
+		$sorting_terms['project_invoice_number_modified'] = esc_html__( 'Invoice Number Modified', 'orbis-4' );
 		break;
 
 	default:
@@ -46,13 +46,13 @@ switch ( get_query_var( 'post_type' ) ) {
 
 			<div class="row row-cols-lg-auto g-3 align-items-center">
 				<div class="col-12">
-					<label for="orbis_search_query" class="sr-only"><?php esc_html_e( 'Search', 'orbis' ); ?></label>
+					<label for="orbis_search_query" class="sr-only"><?php esc_html_e( 'Search', 'orbis-4' ); ?></label>
 
-					<input id="orbis_search_query" type="search" class="form-control" name="s" placeholder="<?php esc_attr_e( 'Search', 'orbis' ); ?>" value="<?php echo esc_attr( $s ); ?>">
+					<input id="orbis_search_query" type="search" class="form-control" name="s" placeholder="<?php esc_attr_e( 'Search', 'orbis-4' ); ?>" value="<?php echo esc_attr( $s ); ?>">
 				</div>
 
 				<div class="col-12">
-					<button type="submit" class="btn btn-secondary"><?php esc_html_e( 'Search', 'orbis' ); ?></button>
+					<button type="submit" class="btn btn-secondary"><?php esc_html_e( 'Search', 'orbis-4' ); ?></button>
 				</div>
 
 				<?php if ( is_post_type_archive( 'orbis_person' ) ) : ?>
@@ -63,14 +63,16 @@ switch ( get_query_var( 'post_type' ) ) {
 						$slugs = filter_input( INPUT_GET, 'c', FILTER_SANITIZE_STRING );
 						$slugs = explode( ',', $slugs );
 
-						$terms = get_terms( array(
-							'taxonomy' => 'orbis_person_category',
-						) );
+						$terms = get_terms(
+							[
+								'taxonomy' => 'orbis_person_category',
+							] 
+						);
 
 						printf(
 							'<select name="%s" class="select2" multiple="multiple" style="width: 30em;" placeholder="%s">',
 							esc_attr( 'c[]' ),
-							esc_attr__( 'All Categories', 'orbis' )
+							esc_attr__( 'All Categories', 'orbis-4' )
 						);
 
 						foreach ( $terms as $term ) {
@@ -95,7 +97,7 @@ switch ( get_query_var( 'post_type' ) ) {
 							}
 						</style>
 
-						<button type="submit" class="btn btn-secondary"><?php esc_html_e( 'Filter', 'orbis' ); ?></button>
+						<button type="submit" class="btn btn-secondary"><?php esc_html_e( 'Filter', 'orbis-4' ); ?></button>
 					</div>
 
 				<?php endif; ?>
@@ -103,7 +105,7 @@ switch ( get_query_var( 'post_type' ) ) {
 				<?php if ( $has_advanced ) : ?>
 
 					<div class="col-12">
-						<small><a href="#" class="advanced-search-link" data-toggle="collapse" data-target="#advanced-search"><?php esc_html_e( 'Advanced Search', 'orbis' ); ?></a></small>
+						<small><a href="#" class="advanced-search-link" data-toggle="collapse" data-target="#advanced-search"><?php esc_html_e( 'Advanced Search', 'orbis-4' ); ?></a></small>
 					</div>
 
 				<?php endif; ?>
@@ -137,10 +139,10 @@ switch ( get_query_var( 'post_type' ) ) {
 								continue;
 							}
 
-							$classes = array(
+							$classes = [
 								'dropdown-item',
 								'clearfix',
-							);
+							];
 
 							$orderby = ( isset( $_GET['orderby'] ) ) ? $_GET['orderby'] : ''; // phpcs:ignore
 							$order   = orbis_get_sort_order( $sorting_term );
@@ -155,12 +157,14 @@ switch ( get_query_var( 'post_type' ) ) {
 
 							$order = orbis_invert_sort_order( $order );
 
-							$link = add_query_arg( array(
-								'orderby' => $sorting_term,
-								'order'   => $order,
-							) );
+							$link = add_query_arg(
+								[
+									'orderby' => $sorting_term,
+									'order'   => $order,
+								] 
+							);
 
-							echo sprintf(
+							printf(
 								"<a class='%s' href='%s'> %s %s </a>",
 								esc_attr( implode( ' ', $classes ) ),
 								esc_url( $link ),
@@ -184,11 +188,11 @@ switch ( get_query_var( 'post_type' ) ) {
 
 						?>
 						<div class="dropdown">
-							<button class="btn btn-secondary dropdown-toggle ml-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php esc_html_e( 'Download', 'orbis' ); ?></button>
+							<button class="btn btn-secondary dropdown-toggle ml-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php esc_html_e( 'Download', 'orbis-4' ); ?></button>
 
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item" href="<?php echo esc_url( $xls_url ); ?>" target="_blank"><i class="fa fa-file-excel-o" aria-hidden="true"></i> <?php esc_html_e( 'Excel', 'orbis' ); ?></a>
-								<a class="dropdown-item" href="<?php echo esc_url( $csv_url ); ?>" target="_blank"><i class="fa fa-file-text-o" aria-hidden="true"></i> <?php esc_html_e( 'CSV', 'orbis' ); ?></a>
+								<a class="dropdown-item" href="<?php echo esc_url( $xls_url ); ?>" target="_blank"><i class="fa fa-file-excel-o" aria-hidden="true"></i> <?php esc_html_e( 'Excel', 'orbis-4' ); ?></a>
+								<a class="dropdown-item" href="<?php echo esc_url( $csv_url ); ?>" target="_blank"><i class="fa fa-file-text-o" aria-hidden="true"></i> <?php esc_html_e( 'CSV', 'orbis-4' ); ?></a>
 							</div>
 						</div>
 					</div>

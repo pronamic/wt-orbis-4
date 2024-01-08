@@ -13,11 +13,11 @@ if ( $invoices && $invoices[0]->id ) : ?>
 		<table class="table table-striped mb-0">
 			<thead>
 				<tr>
-					<th class="border-top-0"><?php esc_html_e( 'Date', 'orbis' ); ?></th>
-					<th class="border-top-0"><?php esc_html_e( 'Amount', 'orbis' ); ?></th>
-					<th class="border-top-0"><?php esc_html_e( 'Hours', 'orbis' ); ?></th>
-					<th class="border-top-0"><?php esc_html_e( 'Invoice Number', 'orbis' ); ?></th>
-					<th class="border-top-0"><?php esc_html_e( 'User', 'orbis' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'Date', 'orbis-4' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'Amount', 'orbis-4' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'Hours', 'orbis-4' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'Invoice Number', 'orbis-4' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'User', 'orbis-4' ); ?></th>
 				</tr>
 			</thead>
 				<?php
@@ -45,7 +45,7 @@ if ( $invoices && $invoices[0]->id ) : ?>
 							if ( $invoice->seconds ) {
 								echo esc_html( orbis_time( $invoice->seconds ) );
 							}
-						?>
+							?>
 						</td>
 						<td>
 							<?php
@@ -64,7 +64,7 @@ if ( $invoices && $invoices[0]->id ) : ?>
 							if ( get_post_meta( $post->ID, '_orbis_project_invoice_number', true ) === $invoice->invoice_number ) {
 								printf(
 									' <span title="%s">✓</span>',
-									esc_html__( 'This is the final invoice.', 'orbis' )
+									esc_html__( 'This is the final invoice.', 'orbis-4' )
 								);
 							}
 							?>
@@ -77,7 +77,7 @@ if ( $invoices && $invoices[0]->id ) : ?>
 				<?php endforeach; ?>
 					<tr>
 						<td>
-							<strong><?php esc_html_e( 'Total:', 'orbis' ); ?></strong>
+							<strong><?php esc_html_e( 'Total:', 'orbis-4' ); ?></strong>
 						</td>
 						<td>
 							<strong>
@@ -103,7 +103,7 @@ if ( $invoices && $invoices[0]->id ) : ?>
 
 	<div class="card-body">
 		<p class="text-muted m-0">
-			<?php esc_html_e( 'No invoices found.', 'orbis' ); ?>
+			<?php esc_html_e( 'No invoices found.', 'orbis-4' ); ?>
 		</p>
 	</div>
 

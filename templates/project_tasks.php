@@ -1,10 +1,12 @@
 <?php
 
-$query = new WP_Query( array(
-	'post_type'          => 'orbis_task',
-	'posts_per_page'     => 25,
-	'orbis_task_project' => get_the_ID(),
-) );
+$query = new WP_Query(
+	[
+		'post_type'          => 'orbis_task',
+		'posts_per_page'     => 25,
+		'orbis_task_project' => get_the_ID(),
+	] 
+);
 
 if ( $query->have_posts() ) : ?>
 
@@ -12,9 +14,9 @@ if ( $query->have_posts() ) : ?>
 		<table class="table table-striped mb-0">
 			<thead>
 				<tr>
-					<th class="border-top-0"><?php esc_html_e( 'Description', 'orbis' ); ?></th>
-					<th class="border-top-0"><?php esc_html_e( 'Time', 'orbis' ); ?></th>
-					<th class="border-top-0"><?php esc_html_e( 'Comments', 'orbis' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'Description', 'orbis-4' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'Time', 'orbis-4' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'Comments', 'orbis-4' ); ?></th>
 				</tr>
 			</thead>
 
@@ -22,7 +24,7 @@ if ( $query->have_posts() ) : ?>
 				<?php
 				while ( $query->have_posts() ) :
 					$query->the_post();
-				?>
+					?>
 
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
@@ -48,7 +50,7 @@ if ( $query->have_posts() ) : ?>
 
 	<div class="card-body">
 		<p class="text-muted m-0">
-			<?php esc_html_e( 'No tasks found.', 'orbis' ); ?>
+			<?php esc_html_e( 'No tasks found.', 'orbis-4' ); ?>
 		</p>
 	</div>
 

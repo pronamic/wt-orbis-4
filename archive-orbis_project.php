@@ -16,11 +16,11 @@ get_header();
 				<thead>
 					<tr>
 						<?php if ( orbis_plugin_activated( 'companies' ) ) : ?>
-							<th><?php esc_html_e( 'Client', 'orbis' ); ?></th>
+							<th><?php esc_html_e( 'Client', 'orbis-4' ); ?></th>
 						<?php endif ?>
-						<th><?php esc_html_e( 'Project', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Price', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Time', 'orbis' ); ?></th>
+						<th><?php esc_html_e( 'Project', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Price', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Time', 'orbis-4' ); ?></th>
 						<th></th>
 					</tr>
 				</thead>
@@ -29,7 +29,7 @@ get_header();
 					<?php
 					while ( have_posts() ) :
 						the_post();
-					?>
+						?>
 
 						<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<?php if ( orbis_plugin_activated( 'companies' ) ) : ?>
@@ -72,7 +72,7 @@ get_header();
 
 								if ( function_exists( 'orbis_project_the_logged_time' ) ) :
 
-									$classes   = array();
+									$classes   = [];
 									$classes[] = orbis_project_in_time() ? 'text-success' : 'text-error';
 
 									?>

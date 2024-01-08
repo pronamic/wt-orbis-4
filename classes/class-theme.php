@@ -17,13 +17,13 @@ class Orbis_Theme {
 		}
 
 		// Actions
-		add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
+		add_action( 'after_setup_theme', [ $this, 'after_setup_theme' ] );
 
-		add_action( 'template_redirect', array( $this, 'template_redirect' ) );
-		add_filter( 'query_vars', array( $this, 'query_vars' ) );
-		add_action( 'pre_get_posts', array( $this, 'pre_get_posts' ) );
+		add_action( 'template_redirect', [ $this, 'template_redirect' ] );
+		add_filter( 'query_vars', [ $this, 'query_vars' ] );
+		add_action( 'pre_get_posts', [ $this, 'pre_get_posts' ] );
 
-		add_filter( 'navigation_markup_template', array( $this, 'navigation_markup_template' ), 10, 2 );
+		add_filter( 'navigation_markup_template', [ $this, 'navigation_markup_template' ], 10, 2 );
 	}
 
 	/**
@@ -36,20 +36,22 @@ class Orbis_Theme {
 		add_editor_style( '/css/editor-style' . $min . '.css' );
 
 		/* Text Domain */
-		load_theme_textdomain( 'orbis', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'orbis-4', get_template_directory() . '/languages' );
 		load_theme_textdomain( 'pronamic-money', get_template_directory() . '/vendor/pronamic/wp-money/languages/' );
 
 		/* Theme support */
 		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat' ) );
-		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
+		add_theme_support( 'post-formats', [ 'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat' ] );
+		add_theme_support( 'html5', [ 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ] );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'title-tag' );
 
 		/* Navigation menu's */
-		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'orbis' ),
-		) );
+		register_nav_menus(
+			[
+				'primary' => __( 'Primary Menu', 'orbis-4' ),
+			] 
+		);
 
 		/* Image sizes */
 		add_image_size( 'featured', 244, 150, true );
@@ -68,10 +70,12 @@ class Orbis_Theme {
 		$args = array_filter( $args );
 
 		if ( isset( $args['c'] ) && is_array( $args['c'] ) ) {
-			$terms = get_terms( array(
-				'taxonomy' => 'orbis_person_category',
-				'include'  => $args['c'],
-			) );
+			$terms = get_terms(
+				[
+					'taxonomy' => 'orbis_person_category',
+					'include'  => $args['c'],
+				] 
+			);
 
 			$args['c'] = implode( ',', wp_list_pluck( $terms, 'slug' ) );
 		}
@@ -115,13 +119,13 @@ class Orbis_Theme {
 		$slugs = explode( ',', $c );
 
 		$tax_query = $query->get( 'tax_query' );
-		$tax_query = is_array( $tax_query ) ? $tax_query : array();
+		$tax_query = is_array( $tax_query ) ? $tax_query : [];
 
-		$tax_query[] = array(
+		$tax_query[] = [
 			'taxonomy' => 'orbis_person_category',
 			'field'    => 'slug',
 			'terms'    => $slugs,
-		);
+		];
 
 		$query->set( 'tax_query', $tax_query );
 	}

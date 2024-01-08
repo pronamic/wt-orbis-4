@@ -5,7 +5,7 @@
  */
 class Orbis_Stats_Widget extends WP_Widget {
 	public function __construct() {
-		parent::__construct( 'orbis-stats', __( 'Orbis - Stats', 'orbis' ) );
+		parent::__construct( 'orbis-stats', __( 'Orbis - Stats', 'orbis-4' ) );
 	}
 
 	public function widget( $args, $instance ) {
@@ -26,25 +26,25 @@ class Orbis_Stats_Widget extends WP_Widget {
 				<div class="col-md-3">
 					<?php $count_posts = wp_count_posts(); ?>
 
-					<span class="entry-meta"><?php esc_html_e( 'Posts', 'orbis' ); ?></span> <p class="important"><?php echo esc_html( $count_posts->publish ); ?></p>
+					<span class="entry-meta"><?php esc_html_e( 'Posts', 'orbis-4' ); ?></span> <p class="important"><?php echo esc_html( $count_posts->publish ); ?></p>
 				</div>
 
 				<div class="col-md-3">
 					<?php $count_posts = wp_count_posts( 'orbis_company' ); ?>
 
-					<span class="entry-meta"><?php esc_html_e( 'Companies', 'orbis' ); ?></span> <p class="important"><?php echo esc_html( $count_posts->publish ); ?></p>
+					<span class="entry-meta"><?php esc_html_e( 'Companies', 'orbis-4' ); ?></span> <p class="important"><?php echo esc_html( $count_posts->publish ); ?></p>
 				</div>
 
 				<div class="col-md-3">
 					<?php $count_posts = wp_count_posts( 'orbis_project' ); ?>
 
-					<span class="entry-meta"><?php esc_html_e( 'Projects', 'orbis' ); ?></span> <p class="important"><?php echo esc_html( $count_posts->publish ); ?></p>
+					<span class="entry-meta"><?php esc_html_e( 'Projects', 'orbis-4' ); ?></span> <p class="important"><?php echo esc_html( $count_posts->publish ); ?></p>
 				</div>
 
 				<div class="col-md-3">
 					<?php $count_posts = wp_count_posts( 'orbis_person' ); ?>
 
-					<span class="entry-meta"><?php esc_html_e( 'Persons', 'orbis' ); ?></span> <p class="important"><?php echo esc_html( $count_posts->publish ); ?></p>
+					<span class="entry-meta"><?php esc_html_e( 'Persons', 'orbis-4' ); ?></span> <p class="important"><?php echo esc_html( $count_posts->publish ); ?></p>
 				</div>
 			</div>
 		</div>
@@ -69,7 +69,7 @@ class Orbis_Stats_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
-				<?php esc_html_e( 'Title:', 'orbis' ); ?>
+				<?php esc_html_e( 'Title:', 'orbis-4' ); ?>
 			</label>
 
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />

@@ -17,13 +17,13 @@ get_header();
 			<table class="table table-striped table-condense table-hover">
 				<thead>
 					<tr>
-						<th><?php esc_html_e( 'Title', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'URL', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Required response code', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Last response code', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Last response message', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Last response duration', 'orbis' ); ?></th>
-						<th><?php esc_html_e( 'Last time checked', 'orbis' ); ?></th>
+						<th><?php esc_html_e( 'Title', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'URL', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Required response code', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Last response code', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Last response message', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Last response duration', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Last time checked', 'orbis-4' ); ?></th>
 						<th></th>
 					</tr>
 				</thead>
@@ -31,7 +31,7 @@ get_header();
 					<?php
 					while ( have_posts() ) :
 						the_post();
-					?>
+						?>
 
 						<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<td>
@@ -83,7 +83,7 @@ get_header();
 								if ( empty( $time ) ) {
 									echo '—';
 								} else {
-									echo esc_html( date_i18n( __( 'd-m-Y H:i', 'orbis' ), $time ) );
+									echo esc_html( date_i18n( __( 'd-m-Y H:i', 'orbis-4' ), $time ) );
 								}
 
 								?>

@@ -7,7 +7,7 @@
 		printf(
 			'<i class="fa fa-comment text-muted" aria-hidden="true"></i> <a href="%s">%s</a>',
 			esc_url( get_permalink() . '#respond' ),
-			esc_html__( 'Respond', 'orbis' )
+			esc_html__( 'Respond', 'orbis-4' )
 		);
 
 		?>

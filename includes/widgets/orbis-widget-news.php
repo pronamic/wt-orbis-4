@@ -5,7 +5,7 @@
  */
 class Orbis_News_Widget extends WP_Widget {
 	public function __construct() {
-		parent::__construct( 'orbis-news', __( 'Orbis - News', 'orbis' ) );
+		parent::__construct( 'orbis-news', __( 'Orbis - News', 'orbis-4' ) );
 	}
 
 	public function widget( $args, $instance ) {
@@ -19,11 +19,13 @@ class Orbis_News_Widget extends WP_Widget {
 			echo $before_title . $title . $after_title; // WPCS: XSS ok.
 		}
 
-		$query = new WP_Query( array(
-			'post_type'      => 'post',
-			'posts_per_page' => 11,
-			'no_found_rows'  => true,
-		) );
+		$query = new WP_Query(
+			[
+				'post_type'      => 'post',
+				'posts_per_page' => 11,
+				'no_found_rows'  => true,
+			] 
+		);
 
 		?>
 
@@ -37,7 +39,7 @@ class Orbis_News_Widget extends WP_Widget {
 							<?php
 							if ( $query->have_posts() ) :
 								$query->the_post();
-							?>
+								?>
 
 								<div class="content">
 									<?php if ( has_post_thumbnail() ) : ?>
@@ -60,13 +62,13 @@ class Orbis_News_Widget extends WP_Widget {
 
 						<div class="col-md-6">
 							<div class="content">
-								<h4><?php esc_html_e( 'More news', 'orbis' ); ?></h4>
+								<h4><?php esc_html_e( 'More news', 'orbis-4' ); ?></h4>
 
 								<ul class="no-disc">
 									<?php
 									while ( $query->have_posts() ) :
 										$query->the_post();
-									?>
+										?>
 
 										<li>
 											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -105,7 +107,7 @@ class Orbis_News_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
-				<?php esc_html_e( 'Title:', 'orbis' ); ?>
+				<?php esc_html_e( 'Title:', 'orbis-4' ); ?>
 			</label>
 
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />

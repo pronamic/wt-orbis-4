@@ -7,31 +7,33 @@ global $orbis_errors;
 <div class="panel">
 	<div class="content">
 		<form role="form" name="addTaskForm">
-			<legend><?php esc_html_e( 'Add task', 'orbis' ); ?></legend>
+			<legend><?php esc_html_e( 'Add task', 'orbis-4' ); ?></legend>
 
 			<?php $tabindex = 2; ?>
 
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
-						<label><?php esc_html_e( 'Project', 'orbis' ); ?></label>
-						<input placeholder="<?php esc_attr_e( 'Select project…', 'orbis' ); ?>" type="text" class="orbis-id-control orbis-project-id-control select-form-control" data-text="" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" autofocus="autofocus" ng-model="formTaskProjectId" required />
+						<label><?php esc_html_e( 'Project', 'orbis-4' ); ?></label>
+						<input placeholder="<?php esc_attr_e( 'Select project…', 'orbis-4' ); ?>" type="text" class="orbis-id-control orbis-project-id-control select-form-control" data-text="" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" autofocus="autofocus" ng-model="formTaskProjectId" required />
 					</div>
 				</div>
 
 				<div class="col-md-6">
 					<div class="form-group">
-						<label><?php esc_html_e( 'Assignee', 'orbis' ); ?></label>
+						<label><?php esc_html_e( 'Assignee', 'orbis-4' ); ?></label>
 
 						<?php
 
-						$output = wp_dropdown_users( array(
-							'name'             => 'orbis_task_assignee',
-							'selected'         => filter_input( INPUT_GET, 'orbis_task_assignee', FILTER_SANITIZE_STRING ),
-							'show_option_none' => __( '— Select Assignee —', 'orbis' ),
-							'class'            => 'form-control',
-							'echo'             => false,
-						) );
+						$output = wp_dropdown_users(
+							[
+								'name'             => 'orbis_task_assignee',
+								'selected'         => filter_input( INPUT_GET, 'orbis_task_assignee', FILTER_SANITIZE_STRING ),
+								'show_option_none' => __( '— Select Assignee —', 'orbis-4' ),
+								'class'            => 'form-control',
+								'echo'             => false,
+							] 
+						);
 
 						echo str_replace( '<select ', '<select ng-model="formTaskAssigneeId" required ', $output ); // WPCS: XSS ok.
 
@@ -43,15 +45,15 @@ global $orbis_errors;
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
-						<label><?php esc_html_e( 'Task', 'orbis' ); ?></label>
-						<textarea placeholder="<?php esc_attr_e( 'Task description', 'orbis' ); ?>" class="input-lg" cols="60" rows="5"  tabindex="<?php echo esc_attr( $tabindex++ ); ?>" ng-model="formTaskText" required></textarea>
+						<label><?php esc_html_e( 'Task', 'orbis-4' ); ?></label>
+						<textarea placeholder="<?php esc_attr_e( 'Task description', 'orbis-4' ); ?>" class="input-lg" cols="60" rows="5"  tabindex="<?php echo esc_attr( $tabindex++ ); ?>" ng-model="formTaskText" required></textarea>
 					</div>
 				</div>
 
 				<div class="col-md-6">
 
 					<div class="form-group">
-						<label><?php esc_html_e( 'Date', 'orbis' ); ?></label>
+						<label><?php esc_html_e( 'Date', 'orbis-4' ); ?></label>
 						<input type="date" class="form-control datepicker" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" ng-model="formTaskDueAt" required />
 
 						<style>
@@ -69,23 +71,23 @@ global $orbis_errors;
 					</div>
 
 					<div class="form-group clearfix">
-						<label class="form-label"><?php esc_html_e( 'Time', 'orbis' ); ?></label>
+						<label class="form-label"><?php esc_html_e( 'Time', 'orbis-4' ); ?></label>
 
 						<div class="input-group inline-input-group">
 							<input class="form-control" size="2" type="number" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" ng-model="formTaskHours" />
-							<span class="input-group-addon"><?php esc_html_e( 'hours', 'orbis' ); ?></span>
+							<span class="input-group-addon"><?php esc_html_e( 'hours', 'orbis-4' ); ?></span>
 						</div>
 
 						<div class="input-group inline-input-group">
 							<input class="form-control" size="2" type="number" tabindex="<?php echo esc_attr( $tabindex++ ); ?>" ng-model="formTaskMinutes" />
-							<span class="input-group-addon"><?php esc_html_e( 'minutes', 'orbis' ); ?></span>
+							<span class="input-group-addon"><?php esc_html_e( 'minutes', 'orbis-4' ); ?></span>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="form-actions">
-				<button id="add-task" class="btn btn-primary" type="submit" ng-click="addTask()"  ng-disabled="addTaskForm.$invalid"><?php esc_html_e( 'Add task', 'orbis' ); ?></button>
+				<button id="add-task" class="btn btn-primary" type="submit" ng-click="addTask()"  ng-disabled="addTaskForm.$invalid"><?php esc_html_e( 'Add task', 'orbis-4' ); ?></button>
 			</div>
 		</form>
 	</div>

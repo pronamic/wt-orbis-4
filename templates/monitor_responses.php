@@ -4,7 +4,9 @@ global $wpdb;
 
 $amount = isset( $_GET['amount'] ) ? intval( $_GET['amount'] ) : '10'; //PHPCS:ignore WordPress.VIP.ValidatedSanitizedInput.InputNotValidated
 
-$responses = $wpdb->get_results( $wpdb->prepare( "
+$responses = $wpdb->get_results(
+	$wpdb->prepare(
+		"
 	SELECT
 		*
 	FROM
@@ -15,12 +17,13 @@ $responses = $wpdb->get_results( $wpdb->prepare( "
 		monitored_date DESC
 	LIMIT
 		0, %d",
-	$post->ID,
-	$amount
-) );
+		$post->ID,
+		$amount
+	) 
+);
 
 $table_title = sprintf(
-	__( 'Last %d Responses', 'orbis' ),
+	__( 'Last %d Responses', 'orbis-4' ),
 	$amount
 );
 ?>
@@ -40,11 +43,11 @@ $table_title = sprintf(
 		<table class="table table-striped mb-0">
 			<thead>
 				<tr>
-					<th class="border-top-0" scope="col"><?php esc_html_e( 'Date', 'orbis' ); ?></th>
-					<th class="border-top-0" scope="col"><?php esc_html_e( 'Duration', 'orbis' ); ?></th>
-					<th class="border-top-0" scope="col"><?php esc_html_e( 'Code', 'orbis' ); ?></th>
-					<th class="border-top-0" scope="col"><?php esc_html_e( 'Message', 'orbis' ); ?></th>
-					<th class="border-top-0" scope="col"><?php esc_html_e( 'Content Length', 'orbis' ); ?></th>
+					<th class="border-top-0" scope="col"><?php esc_html_e( 'Date', 'orbis-4' ); ?></th>
+					<th class="border-top-0" scope="col"><?php esc_html_e( 'Duration', 'orbis-4' ); ?></th>
+					<th class="border-top-0" scope="col"><?php esc_html_e( 'Code', 'orbis-4' ); ?></th>
+					<th class="border-top-0" scope="col"><?php esc_html_e( 'Message', 'orbis-4' ); ?></th>
+					<th class="border-top-0" scope="col"><?php esc_html_e( 'Content Length', 'orbis-4' ); ?></th>
 				</tr>
 			</thead>
 

@@ -40,20 +40,22 @@
 				</div>
 
 				<div class="primary-nav" role="navigation">
-					<h3><?php esc_html_e( 'Menu', 'orbis' ); ?></h3>
+					<h3><?php esc_html_e( 'Menu', 'orbis-4' ); ?></h3>
 
 					<?php
 
-					wp_nav_menu( array(
-						'container'      => false,
-						'theme_location' => 'primary',
-						'depth'          => 2,
-						'fallback_cb'    => '',
-					) );
+					wp_nav_menu(
+						[
+							'container'      => false,
+							'theme_location' => 'primary',
+							'depth'          => 2,
+							'fallback_cb'    => '',
+						] 
+					);
 
 					?>
 
-					<span class="orbis-toggle-nav text-light mt-2"><span class="nav-label"><?php esc_html_e( 'Collapse menu', 'orbis' ); ?></span></span>
+					<span class="orbis-toggle-nav text-light mt-2"><span class="nav-label"><?php esc_html_e( 'Collapse menu', 'orbis-4' ); ?></span></span>
 				</div>
 			</div>
 
@@ -77,14 +79,14 @@
 
 								<ul class="dropdown-menu dropdown-menu-right">
 									<li class="dropdown-item">
-										<a href="http://orbiswp.com/help/"><i class="fa fa-question-circle"></i> <?php esc_html_e( 'Help', 'orbis' ); ?></a>
+										<a href="http://orbiswp.com/help/"><i class="fa fa-question-circle"></i> <?php esc_html_e( 'Help', 'orbis-4' ); ?></a>
 									</li>
 									<li class="dropdown-item">
-										<a href="<?php echo esc_attr( admin_url( 'profile.php' ) ); ?>"><i class="fa fa-user"></i> <?php esc_html_e( 'Edit profile', 'orbis' ); ?></a>
+										<a href="<?php echo esc_attr( admin_url( 'profile.php' ) ); ?>"><i class="fa fa-user"></i> <?php esc_html_e( 'Edit profile', 'orbis-4' ); ?></a>
 									</li>
 									<li class="dropdown-divider"></li>
 									<li class="dropdown-item">
-										<a href="<?php echo esc_attr( wp_logout_url() ); ?>"><i class="fa fa-power-off"></i> <?php esc_html_e( 'Log out', 'orbis' ); ?></a>
+										<a href="<?php echo esc_attr( wp_logout_url() ); ?>"><i class="fa fa-power-off"></i> <?php esc_html_e( 'Log out', 'orbis-4' ); ?></a>
 										</li>
 								</ul>
 							</li>
@@ -95,7 +97,7 @@
 								<div class="dropdown-menu dropdown-menu-right">
 									<form method="get" class="navbar-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 										<div class="form-group">
-											<input type="search" name="s" class="form-control search-input" placeholder="<?php esc_attr_e( 'Search', 'orbis' ); ?>" value="<?php echo esc_attr( $s ); ?>">
+											<input type="search" name="s" class="form-control search-input" placeholder="<?php esc_attr_e( 'Search', 'orbis-4' ); ?>" value="<?php echo esc_attr( $s ); ?>">
 										</div>
 									</form>
 								</div>

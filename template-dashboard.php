@@ -8,12 +8,12 @@ get_header(); ?>
 <?php
 while ( have_posts() ) :
 	the_post();
-?>
+	?>
 
 	<?php the_content(); ?>
 
 	<div class="dashboard-loader">
-		<?php esc_html_e( 'Loading…', 'orbis' ); ?>
+		<?php esc_html_e( 'Loading…', 'orbis-4' ); ?>
 	</div>
 
 	<div id="dashboard-content-holder">
