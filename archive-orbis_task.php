@@ -22,42 +22,82 @@
 					while ( have_posts() ) :
 						the_post();
 
-						$due_at = get_post_meta( get_the_ID(), '_orbis_task_due_at', true );
-
-						if ( empty( $due_at ) ) {
-								$due_at_ouput = '—';
-						} else {
-							$seconds = strtotime( $due_at );
-							$delta   = $seconds - time();
-							$days    = round( $delta / ( 3600 * 24 ) );
-
-							if ( $days < 0 ) {
-								$due_at_ouput = sprintf( __( '<span class="label label-danger">%d days</span>', 'orbis-4' ), $days ); //phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
-							} else {
-								$due_at_ouput = '';
-							}
-						}
+						$task = \Pronamic\Orbis\Tasks\Task::from_post( get_post() );
 
 						?>
-
 						<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<td>
 								<a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br />
 
 								<div class="entry-meta">
-									<i class="fa fa-file" aria-hidden="true"></i> <?php orbis_task_project(); ?> <i class="fa fa-user" aria-hidden="true"></i> <?php orbis_task_assignee(); ?> <i class="fa fa-clock-o" aria-hidden="true"></i> <?php orbis_task_time(); ?>
+									<i class="fa fa-file" aria-hidden="true"></i>
+									<?php
+
+									if ( isset( $post->project_post_id ) ) {
+										printf( 
+											'<a href="%s">%s</a>',
+											esc_attr( get_permalink( $post->project_post_id ) ),
+											esc_html( get_the_title( $post->project_post_id ) )	
+										);
+									}
+
+									?>
+
+									<i class="fa fa-user" aria-hidden="true"></i>
+									<?php
+
+									if ( isset( $post->task_assignee_display_name ) ) {
+										echo $post->task_assignee_display_name;
+									}
+
+									?>
+
+									<i class="fa fa-clock-o" aria-hidden="true"></i>
+									<?php
+
+									$post_id = get_the_ID();
+
+									$seconds = get_post_meta( $post_id, '_orbis_task_seconds', true );
+
+									echo orbis_time( $seconds );
+
+									?>
 								</div>
 							</td>
 							<td>
 								<?php echo get_avatar( get_post_meta( get_the_ID(), '_orbis_task_assignee_id', true ), 40 ); ?>
 							</td>
 							<td>
-								<?php orbis_task_due_at(); ?> <?php echo esc_html( $due_at_ouput ); ?>
+								<?php
+
+								if ( null === $task->due_date ) {
+									echo '—';
+								}
+
+								if ( null !== $task->due_date ) {
+									$today = new DateTime();
+
+									echo esc_html( wp_date( 'D j M Y', $task->due_date->getTimestamp() ) );
+
+									if ( $task->due_date < $today ) {
+										$diff = $task->due_date->diff( $today );
+
+										printf(
+											' <span class="badge text-bg-danger">%s</span>',
+											esc_html(
+												sprintf(
+													_n( '%s day', '%s days', $diff->days, 'orbis-4' ),
+													number_format_i18n( $diff->days, 0 )
+												)
+											)
+										);
+									}
+								}
+
+								?>
 							</td>
 							<td>
 								<?php get_template_part( 'templates/table-cell-actions' ); ?>
-
-								<?php orbis_finish_task_link(); ?>
 							</td>
 						</tr>
 
