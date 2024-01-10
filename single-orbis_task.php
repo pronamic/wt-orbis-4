@@ -36,39 +36,6 @@ while ( have_posts() ) :
 			<div class="col-md-4">
 				<?php do_action( 'orbis_before_side_content' ); ?>
 
-				<div class="card">
-					<div class="card-header"><?php esc_html_e( 'Additional Information', 'orbis-4' ); ?></div>
-					<div class="card-body">
-
-						<div class="card-text">
-							<dl>
-								<dt><?php esc_html_e( 'Posted on', 'orbis-4' ); ?></dt>
-								<dd><?php echo esc_html( get_the_date() ); ?></dd>
-
-								<dt><?php esc_html_e( 'Posted by', 'orbis-4' ); ?></dt>
-								<dd><?php echo esc_html( get_the_author() ); ?></dd>
-
-								<dt><?php esc_html_e( 'Project', 'orbis-4' ); ?></dt>
-								<dd><?php orbis_task_project(); ?></dd>
-
-								<dt><?php esc_html_e( 'Assignee', 'orbis-4' ); ?></dt>
-								<dd><?php orbis_task_assignee(); ?></dd>
-
-								<dt><?php esc_html_e( 'Deadline', 'orbis-4' ); ?></dt>
-								<dd><?php orbis_task_due_at(); ?></dd>
-
-								<?php if ( null !== get_edit_post_link() ) : ?>
-
-									<dt><?php esc_html_e( 'Actions', 'orbis-4' ); ?></dt>
-									<dd><?php edit_post_link( __( 'Edit', 'orbis-4' ) ); ?></dd>
-
-								<?php endif; ?>
-							</dl>
-						</div>
-					</div>
-
-				</div>
-
 				<?php do_action( 'orbis_after_side_content' ); ?>
 			</div>
 		</div>
