@@ -96,7 +96,12 @@ $twinfield_customer_id = get_post_meta( $post->ID, '_twinfield_customer_id', tru
 
 			<?php
 
-			$url_open_kvk = sprintf( 'https://openkvk.nl/kvk/%s/', $kvk_number );
+			$url_open_kvk = add_query_arg(
+				[
+					'q' => $kvk_number,
+				],
+				'https://openkvk.nl/search'
+			);
 
 			$url_kvk = add_query_arg(
 				[
