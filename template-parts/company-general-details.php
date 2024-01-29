@@ -97,7 +97,18 @@ $twinfield_customer_id = get_post_meta( $post->ID, '_twinfield_customer_id', tru
 			<?php
 
 			$url_open_kvk = sprintf( 'https://openkvk.nl/kvk/%s/', $kvk_number );
-			$url_kvk      = add_query_arg( 'q', $kvk_number, 'http://zoeken.kvk.nl/search.ashx' );
+
+			$url_kvk = add_query_arg(
+				[
+					'kvknummer'         => $kvk_number,
+					'hoofdvestiging'    => '1',
+					'rechtspersoon'     => '1',
+					'nevenvestiging'    => '1',
+					'zoekvervallen'     => '1',
+					'zoekuitgeschreven' => '1',
+				],
+				'https://www.kvk.nl/zoeken/handelsregister/'
+			);
 
 			?>
 			<a class="badge text-bg-info" href="<?php echo esc_attr( $url_open_kvk ); ?>" target="_blank">openkvk.nl</a>
