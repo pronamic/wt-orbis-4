@@ -16,14 +16,8 @@ require_once get_template_directory() . '/includes/nav.php';
 require_once get_template_directory() . '/includes/shortcodes.php';
 require_once get_template_directory() . '/includes/customizer.php';
 require_once get_template_directory() . '/includes/monitors.php';
-
-if ( function_exists( 'orbis_tasks_bootstrap' ) ) {
-	require_once get_template_directory() . '/includes/tasks.php';
-}
-
-if ( function_exists( 'orbis_timesheets_bootstrap' ) ) {
-	require_once get_template_directory() . '/includes/timesheets.php';
-}
+require_once get_template_directory() . '/includes/tasks.php';
+require_once get_template_directory() . '/includes/timesheets.php';
 
 function orbis_plugin_activated( $plugin ) {
 	return function_exists( 'orbis_' . $plugin . '_bootstrap' );
