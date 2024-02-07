@@ -31,7 +31,7 @@ if ( $query->have_posts() ) : ?>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</td>
 						<td class="task-time">
-							<?php orbis_task_time(); ?>
+							
 						</td>
 						<td>
 							<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
