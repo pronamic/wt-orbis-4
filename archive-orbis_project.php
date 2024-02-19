@@ -19,7 +19,13 @@ get_header();
 							<th><?php esc_html_e( 'Client', 'orbis-4' ); ?></th>
 						<?php endif ?>
 						<th><?php esc_html_e( 'Project', 'orbis-4' ); ?></th>
-						<th><?php esc_html_e( 'Price', 'orbis-4' ); ?></th>
+
+						<?php if ( current_user_can( 'read_orbis_project_price', get_the_ID() ) ) : ?>
+						
+							<th><?php esc_html_e( 'Price', 'orbis-4' ); ?></th>
+
+						<?php endif; ?>
+
 						<th><?php esc_html_e( 'Time', 'orbis-4' ); ?></th>
 						<th></th>
 					</tr>
@@ -52,34 +58,44 @@ get_header();
 
 								<?php get_template_part( 'templates/table-cell-comments' ); ?>
 							</td>
-							<td>
-								<?php
 
-								$price = $orbis_project->get_price();
+							<?php if ( current_user_can( 'read_orbis_project_price', get_the_ID() ) ) : ?>
+							
+								<td>
+									<?php
 
-								if ( ! empty( $price ) ) {
-									$money = new Money( $price, 'EUR' );
-								
-									echo esc_html( $money->format_i18n() );
-								}
+									$price = $orbis_project->get_price();
 
-								?>
-							</td>
+									if ( ! empty( $price ) ) {
+										$money = new Money( $price, 'EUR' );
+									
+										echo esc_html( $money->format_i18n() );
+									}
+
+									?>
+								</td>
+
+							<?php endif; ?>
+
 							<td class="project-time">
 								<?php
 
-								echo esc_html( $orbis_project->get_available_time()->format() );
+								if ( isset( $orbis_project ) ) {
+									echo esc_html( $orbis_project->get_available_time()->format() );
 
-								if ( function_exists( 'orbis_project_the_logged_time' ) ) :
+									if ( function_exists( 'orbis_project_the_logged_time' ) ) :
 
-									$classes   = [];
-									$classes[] = orbis_project_in_time() ? 'text-success' : 'text-error';
+										$classes   = [];
+										$classes[] = orbis_project_in_time() ? 'text-success' : 'text-error';
 
-									?>
+										?>
 
-									<span class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>"><?php orbis_project_the_logged_time(); ?></span>
+										<span class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>"><?php orbis_project_the_logged_time(); ?></span>
 
-								<?php endif; ?>
+									<?php endif;
+								}
+
+								?>
 							</td>
 							<td>
 								<?php get_template_part( 'templates/table-cell-actions' ); ?>
