@@ -42,19 +42,23 @@ while ( have_posts() ) :
 				<div class="card-body">
 					<h5 class="entry-meta"><?php esc_html_e( 'Project budget', 'orbis-4' ); ?></h5>
 
-					<?php
+					<?php if ( current_user_can( 'read_orbis_project_price', get_the_ID() ) ) : ?>
 
-					$price = $orbis_project->get_price();
+						<?php
 
-					if ( $price ) :
-						?>
+						$price = $orbis_project->get_price();
 
-						<p class="project-time">
-							<?php
-							$price = new Money( $price, 'EUR' );
-							echo esc_html( $price->format_i18n() );
+						if ( $price ) :
 							?>
-						</p>
+
+							<p class="project-time">
+								<?php
+								$price = new Money( $price, 'EUR' );
+								echo esc_html( $price->format_i18n() );
+								?>
+							</p>
+
+						<?php endif; ?>
 
 					<?php endif; ?>
 
@@ -105,18 +109,22 @@ while ( have_posts() ) :
 						<dt><?php esc_html_e( 'Posted by', 'orbis-4' ); ?></dt>
 						<dd><?php echo esc_html( get_the_author() ); ?></dd>
 
-						<?php
+						<?php if ( current_user_can( 'read_orbis_project_agreement', get_the_ID() ) ) : ?>
 
-						$agreement_id = get_post_meta( get_the_ID(), '_orbis_project_agreement_id', true );
+							<?php
 
-						if ( ! empty( $agreement_id ) ) :
-							$agreement = get_post( $agreement_id );
-							?>
+							$agreement_id = get_post_meta( get_the_ID(), '_orbis_project_agreement_id', true );
 
-							<dt><?php esc_html_e( 'Agreement', 'orbis-4' ); ?></dt>
-							<dd>
-								<a href="<?php echo esc_attr( get_permalink( $agreement ) ); ?>"><?php echo get_the_title( $agreement ); ?></a>
-							</dd>
+							if ( ! empty( $agreement_id ) ) :
+								$agreement = get_post( $agreement_id );
+								?>
+
+								<dt><?php esc_html_e( 'Agreement', 'orbis-4' ); ?></dt>
+								<dd>
+									<a href="<?php echo esc_attr( get_permalink( $agreement ) ); ?>"><?php echo get_the_title( $agreement ); ?></a>
+								</dd>
+
+							<?php endif; ?>
 
 						<?php endif; ?>
 
