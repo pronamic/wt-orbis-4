@@ -34,6 +34,13 @@
 			"classes/"
 		]
 	},
+	"config": {
+		"allow-plugins": {
+			"automattic/jetpack-autoloader": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"wp-slug": "orbis-4"
+	},
 	"require": {
 		"pronamic/wp-money": "^2.4",
 		"php": ">=5.2.0",
@@ -45,10 +52,15 @@
 		"pronamic/wp-coding-standards": "^2.1",
 		"pronamic/pronamic-cli": "^1.1"
 	},
-	"config": {
-		"allow-plugins": {
-			"automattic/jetpack-autoloader": true,
-			"dealerdirect/phpcodesniffer-composer-installer": true
-		}
+	"scripts": {
+		"build": "vendor/bin/pronamic wp-build",
+		"phpcs": "vendor/bin/phpcs",
+		"translate": [
+			"@build",
+			"rsync --recursive --delete --verbose ./build/project/languages/ ./languages/"
+		],
+		"qa": [
+			"@phpcs"
+		]
 	}
 }
