@@ -128,6 +128,42 @@ while ( have_posts() ) :
 
 						<?php endif; ?>
 
+						<dt><?php esc_html_e( 'Period', 'orbis-4' ); ?></dt>
+						<dd>
+							<?php
+
+							$start_date = null;
+
+							$start_date_string = \get_post_meta( get_the_ID(), '_orbis_project_start_date', true );
+
+							if ( '' !== $start_date_string ) {
+								$value = DateTimeImmutable::createFromFormat( 'Y-m-d', $start_date_string );
+
+								$start_date = ( false === $value ) ? null : $value->setTime( 0, 0 );
+							}
+
+							$end_date = null;
+
+							$end_date_string = \get_post_meta( get_the_ID(), '_orbis_project_end_date', true );
+
+							if ( '' !== $end_date_string ) {
+								$value = DateTimeImmutable::createFromFormat( 'Y-m-d', $end_date_string );
+
+								$end_date = ( false === $value ) ? null : $value->setTime( 0, 0 );
+							}
+
+							if ( null !== $start_date && null !== $end_date ) {
+								printf(
+									/* translators: 1: Period start date, 2: Period end date. */
+									\__( '%1$s - %2$s', 'orbis-4' ),
+									( null === $start_date ) ? '?' : \esc_html( \date_i18n( 'D j M Y', $start_date->getTimestamp() ) ),
+									( null === $end_date ) ? '?' : \esc_html( \date_i18n( 'D j M Y', $end_date->getTimestamp() ) )
+								);
+							}
+
+							?>
+						</dd>
+
 						<dt><?php esc_html_e( 'Status', 'orbis-4' ); ?></dt>
 						<dd>
 							<?php if ( $orbis_project->is_finished() ) : ?>

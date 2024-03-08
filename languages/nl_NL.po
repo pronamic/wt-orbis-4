@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/orbis-4\n"
-"POT-Creation-Date: 2024-02-28T11:29:02+00:00\n"
-"PO-Revision-Date: 2024-02-28 12:29+0100\n"
+"POT-Creation-Date: 2024-03-08T08:34:02+00:00\n"
+"PO-Revision-Date: 2024-03-08 09:35+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -90,7 +90,7 @@ msgid "Price"
 msgstr "Prijs"
 
 #: archive-orbis_deal.php:22 archive-orbis_subscription.php:17
-#: single-orbis_project.php:131
+#: single-orbis_project.php:167
 msgid "Status"
 msgstr "Status"
 
@@ -591,17 +591,17 @@ msgstr "Geplaatst op"
 
 #: single-orbis_company.php:73 single-orbis_list.php:252
 #: single-orbis_person.php:242 single-orbis_project.php:109
-#: single-orbis_project.php:263 single.php:31
+#: single-orbis_project.php:299 single.php:31
 msgid "Posted by"
 msgstr "Aangemaakt door"
 
 #: single-orbis_company.php:78 single-orbis_list.php:257
-#: single-orbis_person.php:247 single-orbis_project.php:250 single.php:36
+#: single-orbis_person.php:247 single-orbis_project.php:286 single.php:36
 msgid "Actions"
 msgstr "Acties"
 
 #: single-orbis_company.php:79 single-orbis_list.php:258
-#: single-orbis_person.php:248 single-orbis_project.php:251 single.php:37
+#: single-orbis_person.php:248 single-orbis_project.php:287 single.php:37
 #: templates/table-cell-actions.php:8
 msgid "Edit"
 msgstr "Bewerken"
@@ -728,51 +728,60 @@ msgstr "Project details"
 msgid "Agreement"
 msgstr "Akkoord"
 
-#: single-orbis_project.php:135
+#: single-orbis_project.php:131
+msgid "Period"
+msgstr "Periode"
+
+#. translators: 1: Period start date, 2: Period end date.
+#: single-orbis_project.php:158
+msgid "%1$s - %2$s"
+msgstr "%1$s - %2$s"
+
+#: single-orbis_project.php:171
 msgid "Finished"
 msgstr "Afgerond"
 
-#: single-orbis_project.php:139
+#: single-orbis_project.php:175
 msgid "Not finished"
 msgstr "Niet afgerond"
 
-#: single-orbis_project.php:145
+#: single-orbis_project.php:181
 msgid "Invoiced"
 msgstr "Gefactureerd"
 
-#: single-orbis_project.php:149
+#: single-orbis_project.php:185
 msgid "Not invoiced"
 msgstr "Niet gefactureerd"
 
-#: single-orbis_project.php:155
+#: single-orbis_project.php:191
 msgid "Invoicable"
 msgstr "Facturabel"
 
-#: single-orbis_project.php:159
+#: single-orbis_project.php:195
 msgid "Not invoicable"
 msgstr "Niet facturabel"
 
-#: single-orbis_project.php:180 template-parts/company-general-details.php:134
+#: single-orbis_project.php:216 template-parts/company-general-details.php:134
 msgid "Payment Method"
 msgstr "Betaalmethode"
 
-#: single-orbis_project.php:195 template-parts/company-general-details.php:75
+#: single-orbis_project.php:231 template-parts/company-general-details.php:75
 msgid "Invoice Header Text"
 msgstr "Factuur koptekst"
 
-#: single-orbis_project.php:204 template-parts/company-general-details.php:84
+#: single-orbis_project.php:240 template-parts/company-general-details.php:84
 msgid "Invoice Footer Text"
 msgstr "Factuur voettekst"
 
-#: single-orbis_project.php:213
+#: single-orbis_project.php:249
 msgid "Invoice Line Description"
 msgstr "Factuurregelbeschrijving"
 
-#: single-orbis_project.php:227
+#: single-orbis_project.php:263
 msgid "Final Invoice"
 msgstr "Eindfactuur"
 
-#: single-orbis_project.php:259
+#: single-orbis_project.php:295
 msgid "Project Invoices"
 msgstr "Project Facturen"
 

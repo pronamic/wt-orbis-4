@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-02-28T11:29:02+00:00\n"
+"POT-Creation-Date: 2024-03-08T08:34:02+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: orbis-4\n"
@@ -103,7 +103,7 @@ msgstr ""
 
 #: archive-orbis_deal.php:22
 #: archive-orbis_subscription.php:17
-#: single-orbis_project.php:131
+#: single-orbis_project.php:167
 msgid "Status"
 msgstr ""
 
@@ -620,7 +620,7 @@ msgstr ""
 #: single-orbis_list.php:252
 #: single-orbis_person.php:242
 #: single-orbis_project.php:109
-#: single-orbis_project.php:263
+#: single-orbis_project.php:299
 #: single.php:31
 msgid "Posted by"
 msgstr ""
@@ -628,7 +628,7 @@ msgstr ""
 #: single-orbis_company.php:78
 #: single-orbis_list.php:257
 #: single-orbis_person.php:247
-#: single-orbis_project.php:250
+#: single-orbis_project.php:286
 #: single.php:36
 msgid "Actions"
 msgstr ""
@@ -636,7 +636,7 @@ msgstr ""
 #: single-orbis_company.php:79
 #: single-orbis_list.php:258
 #: single-orbis_person.php:248
-#: single-orbis_project.php:251
+#: single-orbis_project.php:287
 #: single.php:37
 #: templates/table-cell-actions.php:8
 msgid "Edit"
@@ -769,54 +769,63 @@ msgstr ""
 msgid "Agreement"
 msgstr ""
 
-#: single-orbis_project.php:135
+#: single-orbis_project.php:131
+msgid "Period"
+msgstr ""
+
+#. translators: 1: Period start date, 2: Period end date.
+#: single-orbis_project.php:158
+msgid "%1$s - %2$s"
+msgstr ""
+
+#: single-orbis_project.php:171
 msgid "Finished"
 msgstr ""
 
-#: single-orbis_project.php:139
+#: single-orbis_project.php:175
 msgid "Not finished"
 msgstr ""
 
-#: single-orbis_project.php:145
+#: single-orbis_project.php:181
 msgid "Invoiced"
 msgstr ""
 
-#: single-orbis_project.php:149
+#: single-orbis_project.php:185
 msgid "Not invoiced"
 msgstr ""
 
-#: single-orbis_project.php:155
+#: single-orbis_project.php:191
 msgid "Invoicable"
 msgstr ""
 
-#: single-orbis_project.php:159
+#: single-orbis_project.php:195
 msgid "Not invoicable"
 msgstr ""
 
-#: single-orbis_project.php:180
+#: single-orbis_project.php:216
 #: template-parts/company-general-details.php:134
 msgid "Payment Method"
 msgstr ""
 
-#: single-orbis_project.php:195
+#: single-orbis_project.php:231
 #: template-parts/company-general-details.php:75
 msgid "Invoice Header Text"
 msgstr ""
 
-#: single-orbis_project.php:204
+#: single-orbis_project.php:240
 #: template-parts/company-general-details.php:84
 msgid "Invoice Footer Text"
 msgstr ""
 
-#: single-orbis_project.php:213
+#: single-orbis_project.php:249
 msgid "Invoice Line Description"
 msgstr ""
 
-#: single-orbis_project.php:227
+#: single-orbis_project.php:263
 msgid "Final Invoice"
 msgstr ""
 
-#: single-orbis_project.php:259
+#: single-orbis_project.php:295
 msgid "Project Invoices"
 msgstr ""
 
