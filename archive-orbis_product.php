@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php 
+
+use Pronamic\WordPress\Money\Money;
+
+get_header();
+
+?>
 
 <div class="card">
 	<div class="card-block">
@@ -13,6 +19,7 @@
 					<tr>
 						<th><?php esc_html_e( 'Title', 'orbis-4' ); ?></th>
 						<th><?php esc_html_e( 'Price', 'orbis-4' ); ?></th>
+						<th><?php esc_html_e( 'Cost Price', 'orbis-4' ); ?></th>
 						<th></th>
 					</tr>
 				</thead>
@@ -29,7 +36,32 @@
 								<?php get_template_part( 'templates/table-cell-comments' ); ?>
 							</td>
 							<td>
-								<?php orbis_product_the_price(); ?>
+								<?php
+
+								$price = get_post_meta( get_the_ID(), '_orbis_product_price', true );
+
+								if ( empty( $price ) ) {
+									echo '—';
+								} else {
+									$price = new Money( $price, 'EUR' );
+									echo esc_html( $price->format_i18n() );
+								}
+
+								?>
+							</td>
+							<td>
+								<?php
+
+								$price = get_post_meta( get_the_ID(), '_orbis_product_cost_price', true );
+
+								if ( empty( $price ) ) {
+									echo '—';
+								} else {
+									$price = new Money( $price, 'EUR' );
+									echo esc_html( $price->format_i18n() );
+								}
+
+								?>
 							</td>
 							<td>
 								<?php get_template_part( 'templates/table-cell-actions' ); ?>
