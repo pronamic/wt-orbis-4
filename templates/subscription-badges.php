@@ -4,8 +4,8 @@ global $post;
 
 $badges = [];
 
-$current_date    = new \DateTime();
-$expiration_date = new \DateTime( $post->subscription_expiration_date );
+$current_date    = ( new \DateTimeImmutable( 'midnight' ) );
+$expiration_date = ( new \DateTimeImmutable( $post->subscription_expiration_date ) )->setTime( 0, 0 );
 
 $is_active    = empty( $post->subscription_cancel_date ) || $expiration_date > $current_date;
 $is_cancelled = isset( $post->subscription_cancel_date );
