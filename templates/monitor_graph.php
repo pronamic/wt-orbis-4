@@ -43,15 +43,17 @@ $response_times = $wpdb->get_results(
 		post_id = %d
 			AND
 		monitored_date > %s
-	GROUP BY 
+	GROUP BY
 		$groupby( monitored_date )
 	ORDER BY
 		monitored_date ASC
 ",
 		$post->ID,
 		$last_year
-	) 
+	)
 );
+
+$average_durations = [];
 
 foreach ( $response_times as $response ) {
 	$date = strtotime( $response->monitored_date ) * 1000;
