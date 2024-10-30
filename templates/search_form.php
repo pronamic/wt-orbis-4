@@ -113,7 +113,7 @@ switch ( get_query_var( 'post_type' ) ) {
 
 			<div class="form-inline">
 				<div class="dropdown show ml-1">
-					<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 						<?php
 
 						//phpcs:disable
@@ -127,9 +127,9 @@ switch ( get_query_var( 'post_type' ) ) {
 							echo ' ' . wp_kses_post( orbis_sorting_icon( $order ) );
 						}
 						?>
-					</a>
+					</button>
 
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+					<ul class="dropdown-menu">
 
 						<?php
 						foreach ( $sorting_terms as $sorting_term => $label ) {
@@ -165,7 +165,7 @@ switch ( get_query_var( 'post_type' ) ) {
 							);
 
 							printf(
-								"<a class='%s' href='%s'> %s %s </a>",
+								"<li><a class='%s' href='%s'> %s %s </a></li>",
 								esc_attr( implode( ' ', $classes ) ),
 								esc_url( $link ),
 								esc_html( $label ),
@@ -174,7 +174,7 @@ switch ( get_query_var( 'post_type' ) ) {
 						}
 						?>
 
-					</div>
+					</ul>
 				</div>
 
 				<?php if ( is_post_type_archive( 'orbis_person' ) ) : ?>
