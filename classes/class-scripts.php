@@ -47,8 +47,8 @@ class Orbis_Theme_Scripts {
 
 		// Bootstrap
 		wp_register_script(
-			'bootstrap',
-			$uri . '/assets/bootstrap/js/bootstrap' . $min . '.js',
+			'bootstrap-bundle',
+			$uri . '/assets/bootstrap/js/bootstrap.bundle' . $min . '.js',
 			[
 				'jquery',
 				'popper',
@@ -94,7 +94,7 @@ class Orbis_Theme_Scripts {
 			$uri . '/assets/orbis/js/script' . $min . '.js',
 			[
 				'jquery',
-				'bootstrap',
+				'bootstrap-bundle',
 				'tether',
 			],
 			'3.0.1',
