@@ -9,7 +9,6 @@ require_once __DIR__ . '/vendor/autoload_packages.php';
  * Includes
  */
 require_once get_template_directory() . '/includes/projects.php';
-require_once get_template_directory() . '/includes/subscriptions.php';
 require_once get_template_directory() . '/includes/template-tags.php';
 require_once get_template_directory() . '/includes/widgets.php';
 require_once get_template_directory() . '/includes/nav.php';
